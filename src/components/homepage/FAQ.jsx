@@ -31,7 +31,11 @@ export const FAQItem = (props) => {
             <Box
                 cursor={'pointer'}
                 bg={colorPallet.blue_one}
-                minW={'600px'}
+                minW={{
+                    md: '60vw',
+                    sm: "92vw",
+                    base: "92vw"
+                }}
                 minH={'60px'}
                 borderRadius={'100px'}
             >
@@ -53,13 +57,16 @@ const FAQ = () => {
     return (
         <>
             <Box
-                mt={16}
-                mb={24}
+                id="faq"
+                class="faq"
+                // mt={'140px'}
+                // mb={'140px'}
+                my={'140px'}
             >
                 <Box>
                     <Heading
                         fontSize={headingFontSize}
-                    >Frequently Asked Questions (FAQ)</Heading>
+                    >Frequently Asked Questions</Heading>
                 </Box>
 
                 <Flex>
@@ -77,6 +84,12 @@ const FAQ = () => {
                     </Box>
 
                     <Box
+                        display={{
+                            base: "none",
+                            sm: "none",
+                            md: "block",
+                            xl: "block"
+                        }}
                         align={'center'}
                         mt={24}
                     >

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
+import { Box, Flex, Grid, Heading, Image, Link, Text } from "@chakra-ui/react"
 import basecircle from "../../assets/image/basecircle.svg"
 
 import fill_form_sm from "../../assets/image/fill_form_sm.png"
@@ -10,6 +10,7 @@ import success_sm from "../../assets/image/success_sm.png"
 
 import { headingFontSize } from "../../prop_style"
 import { colorPallet } from "../../theme"
+import { form_url } from "../../credential"
 
 const itemList = [{
     number: "1",
@@ -43,17 +44,47 @@ const itemList = [{
 export const positionImage = (number) => {
     switch (number) {
         case "1":
-            return "-120px"
+            return {
+                base: '-60px',
+                sm : "-60px",
+                md : "-120px",
+                xl : "-120px"
+            }
         case "2":
-            return "-130px"
+            return {
+                base: '-60px',
+                sm : "-60px",
+                md : "-130px",
+                xl : "-130px"
+            }
         case "3":
-            return "-160px"
+            return {
+                base: '-60px',
+                sm : "-60px",
+                md : "-160px",
+                xl : "-160px"
+            }
         case "4":
-            return "-120px"
+            return {
+                base: '-60px',
+                sm : "-60px",
+                md : "-120px",
+                xl : "-120px"
+            }
         case "5":
-            return "-150px"
+            return {
+                base: '-80px',
+                sm : "-80px",
+                md : "-150px",
+                xl : "-150px"
+            }
         case "6":
-            return "-170px"
+            return {
+                base: '-80px',
+                sm : "-80px",
+                md : "-170px",
+                xl : "-170px"
+            }
         default:
             return "0px"
     }
@@ -62,51 +93,184 @@ export const positionImage = (number) => {
 export const textMarginTop = (number) => {
     switch (number) {
         case "1":
-            return "20px"
+            return {
+                base: '30px',
+                sm: '30px',
+                md: '20px',
+                xl: '20px'
+            }
         case "2":
-            return "14px"
+            return {
+                base: '32px',
+                sm: '32px',
+                md: '14px',
+                xl: '14px'
+            }
         case "3":
             return "17px"
         case "4":
-            return "17px"
+            return {
+                base: '40px',
+                sm: '40px',
+                md: '17px',
+                xl: '17px'
+            }
         case "5":
-            return "25px"
+            return "48px"
         case "6":
-            return "27px"
+            return {
+                base: '60px',
+                sm: '60px',
+                md: '27px',
+                xl: '27px'
+            }
         default:
             return "0px"
     }
 }
 
+export const widthImage = (number) => {
+    switch (number) {
+        case "1":
+            return {
+                base : "120px",
+                sm: "120px",
+                md: 'auto',
+                xl : 'auto'
+            }
+        case "2":
+            return {
+                base : "100px",
+                sm: "100px",
+                md: 'auto',
+                xl : 'auto'
+            }
+        case "3":
+            return {
+                base : "90px",
+                sm: "90px",
+                md: 'auto',
+                xl : 'auto'
+            }
+        case "4":
+            return {
+                base : "100px",
+                sm: "100px",
+                md: 'auto',
+                xl : 'auto'
+            }
+        case "5":
+            return {
+                base : "80px",
+                sm: "80px",
+                md: 'auto',
+                xl : 'auto'
+            }
+        case "6":
+            return {
+                base : "100px",
+                sm: "100px",
+                md: 'auto',
+                xl : 'auto'
+            }
+        default:
+            return '0px'
+    }
+
+
+}
+
 export const CaraKerjaItem = (props) => {
     const { number, name, imageSrc } = props
 
+    const redirectToFormURL = (e) => {
+        e.preventDefault()
+
+        window.open(form_url, "_blank")
+    }
+
     return (
         <Box
+            maxW={{
+                base: '140px',
+                sm: '140px',
+                md: '200px',
+                xl: '400px'
+            }}
             minWidth={'1xl'}
             mb={10}
-            mx={10}
+            mx={{
+                base: 2,
+                sm: 2,
+                md: 10,
+                xl :10
+            }}
         >
             <Box>
-                <Image src={basecircle} boxSize={'150px'}/>
-                <Image src={imageSrc} mt={positionImage(number)}/>
+                <Image src={basecircle} boxSize={{
+                    base: "80px",
+                    sm: "80px",
+                    md: '150px'
+                }}/>
+                <Image src={imageSrc} mt={positionImage(number)}
+                    width={widthImage(number)}
+                
+                />
             </Box>
             <Flex
                 mt={textMarginTop(number)}
                 alignItems={'center'}
+                minW={'140px'}
             >
                 <Box
                     bg={colorPallet.blue_four}
                     borderRadius={'100px'}
-                    minW={'35px'}
-                    minH={'35px'}
+                    minW={{
+                        base: '28px',
+                        sm: '28px',
+                        md: '35px',
+                        xl :'35px'
+                    }}
+                    minH={{
+                        base: '28px',
+                        sm: '28px',
+                        md: '35px',
+                        xl :'35px'
+                    }}
                 >
                     <Text
+                        fontSize={{
+                            base: '12px',
+                            sm: '12px',
+                            md: '16px'
+                        }}
                         pt={1}
                         color={'gray.100'}
                     >{number}</Text>
                 </Box>
-                <Text maxW={'240px'} pl={4}>{name}</Text>
+                {
+                    number === "1" ? (
+                        <Text 
+                            fontSize={{
+                                base: '12px',
+                                sm: '12px',
+                                md: '16px'
+                            }}
+                            maxW={'240px'} 
+                            pl={4}
+                        >Mengisi form <Link onClick={redirectToFormURL} color={colorPallet.blue_four}>disini</Link> </Text>
+                    ) : (
+                        <Text 
+                            ml={number === "6" ? "25px" : "auto"}
+                            fontSize={{
+                                base: "12px",
+                                sm: '12px',
+                                md: '16px'
+                            }}
+                            maxW={'240px'} pl={4}
+                            >{name}</Text>
+                    )
+                }
             </Flex>
         </Box>
     )
@@ -117,19 +281,27 @@ const CaraKerja = () => {
     return (
         <>
         <Box
+            id="cara_kerja"
+            class="cara_kerja"
             align={'center'}
-            mt={24}
+            mt={'100px'}
         > 
             <Heading
-                mb={14}
+                mb={{
+                    base:16,
+                    sm: 16,
+                    md:24
+                }}
                 fontSize={headingFontSize}
             >Cara Kerja</Heading>
 
             <Flex
                 mt={10}
                 justifyContent={'space-around'}
-                flexWrap={'wrap'}
+                flexFlow={'row wrap'}
+                rowGap={'5px'}
             >
+
                 {
                     itemList && itemList.map((item, idx) => (
                         <CaraKerjaItem

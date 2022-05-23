@@ -9,34 +9,74 @@ const AboutUs = () => {
     return (
         <>
         <Box
-            mt={24}
+            id="about_us"
+            class="about_us"
+            mt={{
+                base : "100px",
+                sm : "100px",
+                md: '130px'
+            }}
         >
             <Flex
                 justifyContent={'space-between'}
                 alignItems={'center'}
+
+                flexDirection={{
+                    base: "column",
+                    sm: "column",
+                    md: "row",
+                }}
+
+                rowGap={{
+                    base: "60px"
+                }}
             >
                 <Box
                     align={'center'}
                 >
                     <Image src={basecircle} boxSize={{
-                        base: '200px',
+                        base:'300px',
+                        sm: "300px",
                         md: '300px',
                         xl: '400px'
                     }}/>
-                    <Image src={about_me} mt={'-300px'}/>
+                    <Image src={about_me} mt={{
+                        base: '-200px',
+                        md: '-300px'
+                    }}/>
                 </Box>
 
                 <Box
-                    maxW={'60%'}
-                    pl={10}
+                    maxW={{
+                        sm: '100%',
+                        md: '50%'
+                    }}
+                    pl={{
+                        base: 0,
+                        sm: 0,
+                        md: 10
+                    }}
                 >
                     <Heading
                         fontSize={headingFontSize}
+                        pb={2}
                     >Tentang Kami</Heading>
                     <Text
-                        mt={8}
+                        fontSize={{
+                            base: '15px',
+                            sm: '15px',
+                            md:'22px'
+                        }}
+                        mt={{
+                            base:4,
+                            sm: 4,
+                            md: 8
+                        }}
                         color={'gray.700'}
-                    >Platform pertama di Indonesia yang memberikan layanan convert e-wallet secara simple dengan biaya yang lebih murah dan aman. Kami percaya bahwa platform ini dapat menjadi solusi (jelaskan masalah di twitter dan convereter abal2)</Text>
+                        lineHeight={'30px'}
+
+
+                    >Platform pertama di Indonesia yang menawarkan layanan convert saldo e-wallet dengan praktis dan aman. kamu bisa melakukan convert ewallet apapun dengan aman mulai dari Gopay, Shopeepay, OVO dan Dana. Mulai transaksi dengan kami dan nikmat pengalaman transaksi yang lebih aman, praktis dan terjangkau.</Text>
                 </Box>
             </Flex>
         </Box>

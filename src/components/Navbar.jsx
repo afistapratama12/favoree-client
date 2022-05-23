@@ -1,9 +1,17 @@
 import { Box, Button, Flex, Heading, Text, useBreakpointValue } from "@chakra-ui/react"
+import { form_url } from "../credential"
 import { colorPallet } from "../theme"
 
 // DONE
 const Navbar = () => {
     const buttonSize = useBreakpointValue({ base: "sm", sm: "sm", md: "md"})
+
+    const redirectFormURL = (e) => {
+        e.preventDefault()
+
+        // open new tab and redirect to form
+        window.open(form_url, '_blank')
+    }
 
     return (
         <>
@@ -28,10 +36,12 @@ const Navbar = () => {
                                 bg: '#4679EE'
                             }}
                             size={buttonSize}
+                            onClick={redirectFormURL}
                         >
                             <Text
                                 fontSize={{
-                                    base: 'sm',
+                                    base: 'xs',
+                                    sm: 'sm',
                                     md: 'md',
                                     xl: 'lg'
                                 }}>  Yuk Mulai
@@ -56,7 +66,8 @@ const Navbar = () => {
                         >
                             <Text
                                 fontSize={{
-                                    base: 'sm',
+                                    base: 'xs',
+                                    sm: 'sm',
                                     md: 'md',
                                     xl: 'lg'
                                 }}

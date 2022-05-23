@@ -15,7 +15,10 @@ function App() {
   return (
     <ChakraProvider theme={theme}>
         <Helmet>
-          <style>{'body { background-color: #F8FBFD; color: #000000; }'}</style>
+          <style>{'body { background-color: #F8FBFD; color: #000000;}'}</style>
+          <script>
+             { `document.body.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'center' });` }
+          </script>
         </Helmet>
         <Homepage/>
     </ChakraProvider>

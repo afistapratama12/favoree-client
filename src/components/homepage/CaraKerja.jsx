@@ -117,8 +117,8 @@ export const textMarginTop = (number) => {
             return "48px"
         case "6":
             return {
-                base: '80px',
-                sm: '80px',
+                base: '70px',
+                sm: '70px',
                 md: '27px',
                 xl: '27px'
             }
@@ -238,8 +238,8 @@ export const CaraKerjaItem = (props) => {
                 >
                     <Text
                         fontSize={{
-                            base: '12px',
-                            sm: '12px',
+                            base: '13px',
+                            sm: '14px',
                             md: '16px'
                         }}
                         pt={1}
@@ -250,7 +250,7 @@ export const CaraKerjaItem = (props) => {
                     number === "1" ? (
                         <Text 
                             fontSize={{
-                                base: '14px',
+                                base: '13px',
                                 sm: '15px',
                                 md: '16px'
                             }}
@@ -261,7 +261,7 @@ export const CaraKerjaItem = (props) => {
                         <Text 
                             ml={number === "6" ? "25px" : "auto"}
                             fontSize={{
-                                base: "14px",
+                                base: "13px",
                                 sm: '15px',
                                 md: '16px'
                             }}

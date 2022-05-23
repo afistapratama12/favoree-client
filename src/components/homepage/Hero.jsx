@@ -1,6 +1,8 @@
 import { Box, Text, Flex, Button, Heading, Image, useBreakpointValue } from "@chakra-ui/react"
 import { colorPallet } from "../../theme"
 
+import ScrollTo from "react-scroll-into-view";
+
 import basecircle from "../../assets/image/basecircle.svg"
 import hero from '../../assets/image/hero_crop.png'
 import { form_url } from "../../credential"
@@ -13,13 +15,6 @@ const Hero = () => {
 
         // open new tab and redirect to form
         window.open(form_url, '_blank')
-    }
-
-    const redirectToIDCaraKerja = (e) => {
-        e.preventDefault()
-
-        // redirect to class cara_kerja
-        window.location.href = '#cara_kerja'
     }
 
     return (
@@ -114,17 +109,27 @@ const Hero = () => {
                                 bg: 'gray.200'
                             }}
                             size={buttonSize}
-                            onClick={redirectToIDCaraKerja}
                         >
-                            <Text
-                                fontSize={{
-                                    base: 'md',
-                                    sm: 'md',
-                                    md: 'lg',
-                                    xl: 'lg'
-                                }}>  Lihat Cara Kerja
+                            <ScrollTo
+                                selector={`#cara_kerja`} scrollOptions={{
+                                    duration: 1000,
+                                    delay: 100,
+                                    smooth: true,
+                                    offset: -100,
+                                    block: "center",
+                                    inline: 'center'
+                                }}
+                            >
+                                <Text
+                                    fontSize={{
+                                        base: 'md',
+                                        sm: 'md',
+                                        md: 'lg',
+                                        xl: 'lg'
+                                    }}>  Lihat Cara Kerja
 
-                            </Text>
+                                </Text>
+                            </ScrollTo>
                         </Button>
                     </Flex>
                 </Box>

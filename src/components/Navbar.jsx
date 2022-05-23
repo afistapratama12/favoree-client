@@ -21,7 +21,7 @@ const Navbar = () => {
                     justifyContent={'space-between'}
                 >
                     <Heading
-                        fontSize={{ base: '24px', md: '3xl' }}
+                        fontSize={{ base: '22px', md: '3xl' }}
                     >FAVOREE</Heading>
 
                     <Flex>
@@ -40,7 +40,7 @@ const Navbar = () => {
                         >
                             <Text
                                 fontSize={{
-                                    base: 'xs',
+                                    base: 'sm',
                                     sm: 'sm',
                                     md: 'md',
                                     xl: 'lg'
@@ -51,8 +51,9 @@ const Navbar = () => {
                         </Button>
                         <Button
                             ml={{
-                                base: 3,
-                                md: 6,
+                                base: 1,
+                                sm: 2,
+                                md: 5,
                             }}
                             bg={colorPallet.blue_two}
                             borderRadius={'100px'}
@@ -66,7 +67,7 @@ const Navbar = () => {
                         >
                             <Text
                                 fontSize={{
-                                    base: 'xs',
+                                    base: 'sm',
                                     sm: 'sm',
                                     md: 'md',
                                     xl: 'lg'

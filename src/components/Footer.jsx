@@ -117,9 +117,13 @@ const Footer = () => {
                                 sm: "80%",
                                base: "80%",
                            }}
-                            fontSize={'35px'}
                         >
                             <Heading
+                                fontSize={{
+                                    base: '27px',
+                                    sm: '28px',
+                                    md: '35px'
+                                }}
                             >FAVOREE</Heading>
                         </Box>
                         <Box
@@ -129,7 +133,10 @@ const Footer = () => {
                                 sm: "80%",
                                 base: "80%",
                             }}
-                            fontSize={'18px'}
+                            fontSize={{
+                                sm: '14px',
+                                md: '18px'
+                            }}
                             lineHeight={'35px'}
                         >
 
@@ -166,7 +173,10 @@ const Footer = () => {
                         </Box>
 
                         <Box
-                            fontSize={'18px'}
+                            fontSize={{
+                                sm: '16px',
+                                md: '18px'
+                            }}
                             lineHeight={'35px'}
                             minW={'330px'}
 
@@ -178,7 +188,11 @@ const Footer = () => {
                             }}
                         >
                             <Heading
-                                fontSize={'28px'}
+                                fontSize={{
+                                    base: '24px',
+                                    sm: '24px',
+                                    md: '28px'
+                                }}
                             >Reach Us</Heading>
                             <Text
                                 pt={4}

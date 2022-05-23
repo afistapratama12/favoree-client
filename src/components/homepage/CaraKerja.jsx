@@ -39,8 +39,6 @@ const itemList = [{
 }]
 
 
-
-
 export const positionImage = (number) => {
     switch (number) {
         case "1":
@@ -119,8 +117,8 @@ export const textMarginTop = (number) => {
             return "48px"
         case "6":
             return {
-                base: '60px',
-                sm: '60px',
+                base: '80px',
+                sm: '80px',
                 md: '27px',
                 xl: '27px'
             }
@@ -252,8 +250,8 @@ export const CaraKerjaItem = (props) => {
                     number === "1" ? (
                         <Text 
                             fontSize={{
-                                base: '12px',
-                                sm: '12px',
+                                base: '14px',
+                                sm: '15px',
                                 md: '16px'
                             }}
                             maxW={'240px'} 
@@ -263,8 +261,8 @@ export const CaraKerjaItem = (props) => {
                         <Text 
                             ml={number === "6" ? "25px" : "auto"}
                             fontSize={{
-                                base: "12px",
-                                sm: '12px',
+                                base: "14px",
+                                sm: '15px',
                                 md: '16px'
                             }}
                             maxW={'240px'} pl={4}

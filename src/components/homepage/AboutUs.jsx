@@ -63,8 +63,8 @@ const AboutUs = () => {
                     >Tentang Kami</Heading>
                     <Text
                         fontSize={{
-                            base: '15px',
-                            sm: '15px',
+                            base: '17px',
+                            sm: '18px',
                             md:'22px'
                         }}
                         mt={{

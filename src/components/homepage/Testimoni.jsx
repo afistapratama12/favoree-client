@@ -116,8 +116,8 @@ const Testimoni = () => {
                             <Box>
                                 <Heading
                                     fontSize={{
-                                        base: '18px',
-                                        sm: '20px',
+                                        base: '20px',
+                                        sm: '22px',
                                         md: '24px',
                                         xl: '30px'
                                     }}
@@ -131,8 +131,8 @@ const Testimoni = () => {
                                         xl: '30px'
                                     }}
                                     fontSize={{
-                                        base: '14px',
-                                        sm: '16px',
+                                        base: '15px',
+                                        sm: '17px',
                                         md: '20px',
                                         xl :'20px'
                                     }}

@@ -61,7 +61,7 @@ const Hero = () => {
                         fontSize={{
                             xl: '20px',
                             md: '17px',
-                            base: '13px'
+                            base: '15px'
                         }}
                     >Lakukan convert e-wallet dengan lebih praktis, aman, mudah dan murah.</Text>
 
@@ -71,6 +71,7 @@ const Hero = () => {
                         class={'why_footer'}
                     >
                         <Button
+                            h={10}
                             bg={colorPallet.blue_four}
                             color={'white'}
                             borderRadius={'100px'}
@@ -85,8 +86,9 @@ const Hero = () => {
                         >
                             <Text
                                 fontSize={{
-                                    base: 'sm',
-                                    md: 'md',
+                                    base: 'md',
+                                    sm: 'md',
+                                    md: 'lg',
                                     xl: 'lg'
                                 }}>  Ajukan Convert
 
@@ -95,6 +97,7 @@ const Hero = () => {
 
 
                         <Button
+                            h={10}
                             ml={{
                                 base: 3,
                                 md: 6,
@@ -115,8 +118,9 @@ const Hero = () => {
                         >
                             <Text
                                 fontSize={{
-                                    base: 'sm',
-                                    md: 'md',
+                                    base: 'md',
+                                    sm: 'md',
+                                    md: 'lg',
                                     xl: 'lg'
                                 }}>  Lihat Cara Kerja
 

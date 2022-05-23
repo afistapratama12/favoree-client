@@ -56,6 +56,7 @@ const WhyItem = (props) => {
                 >
                     <Text
                         fontSize={{
+                            base: '17px',
                             sm: '17px',
                             md: '22px'
                         }}
@@ -63,7 +64,8 @@ const WhyItem = (props) => {
                     >{title}</Text>
                     <Text
                         fontSize={{
-                            sm: '12px',
+                            base: '16px',
+                            sm: '16px',
                             md: '18px'
                         }}
                         color={'gray.600'}

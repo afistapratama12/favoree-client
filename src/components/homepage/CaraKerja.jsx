@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Heading, Image, Link, Text } from "@chakra-ui/react"
+import { Box, Flex, Heading, Image, Link, Text } from "@chakra-ui/react"
 import basecircle from "../../assets/image/basecircle.svg"
 
 import fill_form_sm from "../../assets/image/fill_form_sm.png"

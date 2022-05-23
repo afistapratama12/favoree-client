@@ -30,7 +30,7 @@ const Navbar = () => {
                             color={'white'}
                             borderRadius={'100px'}
                             _hover={{
-                                bg: colorPallet.blue_four
+                                bg: '#0A42C1'
                             }}
                             _active={{
                                 bg: '#4679EE'
@@ -58,7 +58,7 @@ const Navbar = () => {
                             bg={colorPallet.blue_two}
                             borderRadius={'100px'}
                             _hover={{
-                                bg: colorPallet.blue_two
+                                bg: '#8CE7FD'
                             }}
                             _active={{
                                 bg: '#D1F6FF'

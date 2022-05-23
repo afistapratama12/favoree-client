@@ -71,7 +71,7 @@ const Hero = () => {
                             color={'white'}
                             borderRadius={'100px'}
                             _hover={{
-                                bg: colorPallet.blue_four
+                                bg: '#0A42C1'
                             }}
                             _active={{
                                 bg: '#4679EE'
@@ -103,7 +103,7 @@ const Hero = () => {
                             borderRadius={'100px'}
                             border={'2px'}
                             _hover={{
-                                bg: 'white'
+                                bg: 'gray.100'
                             }}
                             _active={{
                                 bg: 'gray.200'

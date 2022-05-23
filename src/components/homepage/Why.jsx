@@ -1,4 +1,4 @@
-import { Box, Text, Flex, Button, Heading, Image } from "@chakra-ui/react"
+import { Box, Text, Flex, Heading, Image } from "@chakra-ui/react"
 import { colorPallet } from "../../theme"
 
 import lock from '../../assets/vector/lock.svg'

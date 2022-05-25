@@ -6,6 +6,7 @@ import ScrollTo from "react-scroll-into-view";
 import twitter from "../assets/vector/twitter.svg"
 import facebook from "../assets/vector/fb.svg"
 import instagram from "../assets/vector/instagram.svg"
+import { contact_number, hubungi_admin, laporkan_kendala } from "../credential";
 
 const sectionTwoList = [{
     title: 'Why',
@@ -33,11 +34,11 @@ const sectionTwoList = [{
 const sectionThreeList = [{
     title : "Laporkan Kendala",
     is_internal : false,
-    url : "https://api.whatsapp.com/send?phone=6281234123412&text=Halo%20Admin%20Saya%20Mau%20Laporkan%20Kendala%20Pada%20Aplikasi%20Kami"
+    url : laporkan_kendala
 }, {
     title : "Hubungi Admin",
     is_internal : false,
-    url : "https://api.whatsapp.com/send?phone=6281234123412&text=Halo%20Admin%20Saya%20Mau%20Bertanya%20Kami"
+    url : hubungi_admin
 }]
 
 export const FooterSectionItem = (props) => {
@@ -201,7 +202,7 @@ const Footer = () => {
                             <FooterSectionItem
                                 title={'082333703158'}
                                 is_internal={false}
-                                url={'tel:6282333703158'}       
+                                url={contact_number}       
                             />
 
                             <Text

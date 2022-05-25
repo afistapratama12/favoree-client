@@ -10,7 +10,7 @@ import { useState } from "react"
 
 const questionItems = [{
     question : "Bagaimana cara transaksi dengan Favoree ?",
-    answer: 'Cukup klik tombol "Ajukan Convert" di halaman beranda, lalu masukkan nomor e-wallet kamu, masukkan nomor e-wallet tujuan dan bukti pengiriman pada nomor e-wallet Favoree. Jika sudah, klik tombol kirim dan kamu akan menerima konfirmasi transaksi melalui WhatsApp!'
+    answer: 'Cukup klik tombol "Mulai Convert" di halaman beranda, lalu masukkan nomor e-wallet kamu, masukkan nomor e-wallet tujuan dan bukti pengiriman pada nomor e-wallet Favoree. Jika sudah, klik tombol kirim dan kamu akan menerima konfirmasi transaksi melalui WhatsApp!'
 },{
     question : "Berapa biaya admin untuk transaksi e-wallet ?",
     answer: 'Favoree menawarkan biaya transaksi convert e-wallet yang terjangkau. Kamu cukup membayar Rp. 1000 untuk setiap transaksi yang kamu ajukan.'

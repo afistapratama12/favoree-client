@@ -1,16 +1,16 @@
 import { Box, Button, Flex, Heading, Text, useBreakpointValue } from "@chakra-ui/react"
-import { form_url } from "../credential"
+import { form_url, laporkan_kendala } from "../credential"
 import { colorPallet } from "../theme"
 
 // DONE
 const Navbar = () => {
     const buttonSize = useBreakpointValue({ base: "sm", sm: "sm", md: "md"})
 
-    const redirectFormURL = (e) => {
+    const redirectURL = (e, url) => {
         e.preventDefault()
 
         // open new tab and redirect to form
-        window.open(form_url, '_blank')
+        window.open(url, '_blank')
     }
 
     return (
@@ -36,7 +36,7 @@ const Navbar = () => {
                                 bg: '#4679EE'
                             }}
                             size={buttonSize}
-                            onClick={redirectFormURL}
+                            onClick={e => redirectURL(e, form_url)}
                         >
                             <Text
                                 fontSize={{
@@ -64,6 +64,7 @@ const Navbar = () => {
                                 bg: '#D1F6FF'
                             }}
                             size={buttonSize}
+                            onClick={e => redirectURL(e, laporkan_kendala)}
                         >
                             <Text
                                 fontSize={{

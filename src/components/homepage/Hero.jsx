@@ -85,7 +85,7 @@ const Hero = () => {
                                     sm: 'md',
                                     md: 'lg',
                                     xl: 'lg'
-                                }}>  Ajukan Convert
+                                }}>Mulai Convert
 
                             </Text>
                         </Button>

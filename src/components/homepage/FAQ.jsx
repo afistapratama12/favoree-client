@@ -40,11 +40,13 @@ export const FAQItem = (props) => {
                 cursor={'pointer'}
                 bg={isOpen ? colorPallet.blue_two : colorPallet.blue_one}
                 minW={{
+                    xl : '820px',
                     md: '60vw',
                     sm: "92vw",
                     base: "92vw"
                 }}
                 maxW={{
+                    xl: '820px',
                     md: '60vw',
                     sm: "92vw",
                     base: "92vw" 

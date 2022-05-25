@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react"
+import { Box, Button } from "@chakra-ui/react"
 import { Footer } from "../components/Footer"
 import { Navbar } from "../components/Navbar"
 
@@ -9,13 +9,17 @@ import { AboutUs } from "../components/homepage/AboutUs"
 import { CaraKerja } from "../components/homepage/CaraKerja"
 import { Testimoni } from "../components/homepage/Testimoni"
 import { FAQ } from "../components/homepage/FAQ"
+import { Link } from "react-router-dom"
 
 
 const Homepage = () => {
 
     return (
         <>
-            <Navbar/> 
+            <Navbar
+                openButton={true}
+            /> 
+
             <Box maxW={'7xl'} margin={'auto'} px={4}>
                 <Hero/>
 

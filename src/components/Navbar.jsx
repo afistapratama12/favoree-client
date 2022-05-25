@@ -1,9 +1,16 @@
 import { Box, Button, Flex, Heading, Text, useBreakpointValue } from "@chakra-ui/react"
+import { useHistory } from "react-router-dom"
 import { form_url, laporkan_kendala } from "../credential"
 import { colorPallet } from "../theme"
 
+
+
 // DONE
-const Navbar = () => {
+const Navbar = (props) => {  
+    const { openButton } = props
+
+    const history = useHistory()
+    
     const buttonSize = useBreakpointValue({ base: "sm", sm: "sm", md: "md"})
 
     const redirectURL = (e, url) => {
@@ -11,6 +18,21 @@ const Navbar = () => {
 
         // open new tab and redirect to form
         window.open(url, '_blank')
+    }
+
+    const goToHome = (e) => {
+        // get path now
+        const path = window.location.pathname
+
+
+
+        if (path !== "/") {
+            //e.preventDefault()
+            const aboutPageNode = document.getElementById('root')
+
+            aboutPageNode.scrollIntoView({behavior: "smooth"});
+            history.push("/")
+        }
     }
 
     return (
@@ -21,10 +43,12 @@ const Navbar = () => {
                     justifyContent={'space-between'}
                 >
                     <Heading
+                        cursor={'pointer'}
+                        onClick={goToHome}
                         fontSize={{ base: '22px', md: '3xl' }}
                     >FAVOREE</Heading>
 
-                    <Flex>
+                    { openButton && <Flex>
                         <Button
                             bg={colorPallet.blue_four}
                             color={'white'}
@@ -77,7 +101,7 @@ const Navbar = () => {
                                 Laporkan Kendala
                             </Text>
                         </Button>
-                    </Flex>
+                    </Flex> }
                 </Flex>
             </Box>
             </Box>

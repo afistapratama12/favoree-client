@@ -10,8 +10,8 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <StrictMode >
-    <ColorModeScript initialColorMode="light"/>
-    <App />
+      <ColorModeScript initialColorMode="light"/>
+      <App id="app"/>
   </StrictMode>
 );
 

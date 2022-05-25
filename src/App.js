@@ -13,27 +13,24 @@ import {
   Route
 } from "react-router-dom";
 
-// import { TermCondition } from './pages/TermCondition';
-// import { Workflow } from './pages/Workflow';
+import { TermCondition } from './pages/TermCondition';
 import { PageNotFound } from './pages/PageNotFound';
 
-// <Grid minH="100vh" p={3}> 
+import { path } from './routes/route';
+import ScrollToTop from './ScrollToTop';
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
-        <Helmet>
-          <style>{'body { background-color: #F8FBFD; color: #000000;}'}</style>
-          <script>
-             { `document.body.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'center' });` }
-          </script>
-        </Helmet>
+        <Helmet bodyAttributes={{style : 'background-color: #F8FBFD; color: #000000;'}}/>
         <Router>
+          <ScrollToTop>
           <Switch>
-              {/* <Route exact path={`/term-and-condition`} component={TermCondition}/> */}
-              {/* <Route exact path={`/workflow`} component={Workflow}/> */}
-              <Route exact path={`/`} component={Homepage}/>
-              <Route path={"*"} component={PageNotFound}/>
+              <Route exact path={path.home} component={Homepage}/>
+              <Route exact path={path.termAndCondition} component={TermCondition}/>
+              <Route path={path.any} component={PageNotFound}/>
           </Switch>
+          </ScrollToTop>
         </Router>
     </ChakraProvider>
   );

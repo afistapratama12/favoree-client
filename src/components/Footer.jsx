@@ -8,25 +8,32 @@ import facebook from "../assets/vector/fb.svg"
 import instagram from "../assets/vector/instagram.svg"
 import { contact_number, hubungi_admin, laporkan_kendala } from "../credential";
 
+import  { useHistory } from  'react-router-dom'
+
 const sectionTwoList = [{
     title: 'Why',
     is_internal : true,
+    is_on_page : true,
     url : `#why`
 }, {
     title: 'About Us',
     is_internal : true,
+    is_on_page : true,
     url : `#about_us`
 }, {
     title: 'Cara Kerja',
     is_internal : true,
+    is_on_page : true,
     url : `#cara_kerja`
 }, {
     title: 'Testimoni',
     is_internal : true,
+    is_on_page : true,
     url : `#testimoni`
 }, {
     title: 'FAQ',
     is_internal : true,
+    is_on_page : true,
     url : `#faq`
 }]
 
@@ -34,42 +41,41 @@ const sectionTwoList = [{
 const sectionThreeList = [{
     title : "Laporkan Kendala",
     is_internal : false,
+    is_on_page : false,
     url : laporkan_kendala
 }, {
     title : "Hubungi Admin",
     is_internal : false,
+    is_on_page : false,
     url : hubungi_admin
+}, {
+    title : "Syarat dan Ketentuan",
+    is_internal: true,
+    is_on_page : false,
+    url: `/term-and-condition`
 }]
 
 export const FooterSectionItem = (props) => {
-    const { title, url, is_internal } = props
+    const history = useHistory()
+    
+    const { title, url, is_internal, is_on_page } = props
 
     const redirectToExternalUrl = (e, url) => {
         e.preventDefault()
         window.open(url, "_blank")
     }
 
+    const changePage = (e, path) => {
+        e.preventDefault()
+        
+        history.push(path)
+    }
+
     return (
         <Box>
 
             {
-                is_internal ? (
-                    <ScrollTo selector={url} scrollOptions={{
-                        duration: 1000,
-                        delay: 100,
-                        smooth: true,
-                        offset: -100,
-                        block: "center",
-                        inline: 'center'
-                    }}>
-                        <Text
-                            _hover={{
-                                textDecoration: 'underline'
-                            }}
-                            cursor={'pointer'}
-                        >{title}</Text>
-                    </ScrollTo>
-                ) : (
+                !is_internal ? (
                     <Text
                         onClick={(e) => redirectToExternalUrl(e, url)}
 
@@ -78,6 +84,28 @@ export const FooterSectionItem = (props) => {
                             }}
                         cursor={'pointer'}
                     >{title}</Text>
+                ) : is_on_page ? (<ScrollTo selector={url} scrollOptions={{
+                    duration: 1000,
+                    delay: 100,
+                    smooth: true,
+                    offset: -100,
+                    block: "center",
+                    inline: 'center'
+                }}>
+                    <Text
+                        _hover={{
+                            textDecoration: 'underline'
+                        }}
+                        cursor={'pointer'}
+                    >{title}</Text>
+                </ScrollTo>) : (
+                    <Text
+                     _hover={{
+                         textDecoration: 'underline'
+                     }}
+                     cursor={'pointer'}
+                     onClick={(e) => changePage(e, url)}
+                 >{title}</Text>
                 )
             }
         </Box>
@@ -149,6 +177,7 @@ const Footer = () => {
                                             title={item.title}
                                             url={item.url}
                                             is_internal={item.is_internal}
+                                            is_on_page={item.is_on_page}
                                         />
                                     )
                                 })
@@ -156,7 +185,10 @@ const Footer = () => {
                         </Box>
 
                         <Box
-                            fontSize={'18px'}
+                            fontSize={{
+                                sm: '14px',
+                                md: '18px'
+                            }}
                             lineHeight={'35px'}
                         >
                             {
@@ -167,6 +199,7 @@ const Footer = () => {
                                             title={item.title}
                                             url={item.url}
                                             is_internal={item.is_internal}
+                                            is_on_page={item.is_on_page}
                                         />
                                     )
                                 })

@@ -81,6 +81,7 @@ export const FAQItem = (props) => {
                 bg={colorPallet.blue_one}
                 borderRadius={'20px'}
                 maxW={{
+                    xl: '820px',
                     md: '60vw',
                     sm: "92vw",
                     base: "92vw" 

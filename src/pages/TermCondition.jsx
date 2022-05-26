@@ -220,6 +220,7 @@ const TermCondition = () => {
               <ListItem>Nama pengirim</ListItem>
               <ListItem>e-wallet pengirim</ListItem>
               <ListItem>Nomor atau nama akun pengirim</ListItem>
+              <ListItem>Jumlah Convert</ListItem>
               <ListItem>Nama penerima</ListItem>
               <ListItem>e-wallet penerima</ListItem>
               <ListItem>Nomor atau nama akun penerima</ListItem>
@@ -343,9 +344,7 @@ const TermCondition = () => {
               <ListItem>Dana : 0821 4147 3723</ListItem>
             </UnorderedList>
             <Text mt={4} fontSize={fontSizeTNC}>
-              Pengguna bersedia melakukan pembayaran dengan total nominal sesuai
-              dengan pesanan dengan dipotong sebesar 1.000 rupiah untuk biaya
-              administrasi.
+              Pengguna bersedia melakukan pembayaran dengan total nominal sesuai dengan pesanan dengan dipotong sebesar 1.000 rupiah untuk biaya administrasi. Saat ini kami membatasi pembayaran saldo maksimal 1.000.000 rupiah per transaksi atau per pengajuan convert.
             </Text>
           </Box>
 

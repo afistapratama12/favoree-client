@@ -39,11 +39,15 @@ const AboutUs = () => {
                         sm: "300px",
                         md: '300px',
                         xl: '400px'
-                    }}/>
+                    }}
+                        alt={'about-us-circle'}
+                    />
                     <Image src={about_me} mt={{
                         base: '-200px',
                         md: '-300px'
-                    }}/>
+                    }}
+                        alt={'about-us'}
+                    />
                 </Box>
 
                 <Box

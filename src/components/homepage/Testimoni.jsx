@@ -90,6 +90,7 @@ const Testimoni = () => {
                                     md: '200px',
                                     xl :'200px'
                                 }}
+                                alt={'testimoni-circle'}
                             />
                             <Image 
                                 src={testimoni} 
@@ -99,7 +100,8 @@ const Testimoni = () => {
                                     md: '-220px',
                                     xl: '-220px'
                                 }}
-                                w={'230px'}    
+                                w={'230px'} 
+                                alt={'testimoni'}   
                             />
                         </Box>
 
@@ -184,6 +186,7 @@ const Testimoni = () => {
                                 >
                                     <Image src={number === 1 ? circle_on : circle_off}
                                         w={number === 1 ? '16px' : '13px'}
+                                        alt={'testimoni-dots'}
                                     />
                                 </Box>
                                 <Box
@@ -192,6 +195,7 @@ const Testimoni = () => {
                                 >
                                     <Image src={number === 2 ? circle_on : circle_off}
                                         w={number === 2 ? '16px' : '13px'}
+                                        alt={'testimoni-dots'}
                                     />
                                 </Box>
                                 <Box
@@ -200,6 +204,7 @@ const Testimoni = () => {
                                 >
                                     <Image src={number === 3 ? circle_on : circle_off}
                                         w={number === 3 ? '16px' : '13px'}
+                                        alt={'testimoni-dots'}
                                     />
                                 </Box>
                                 

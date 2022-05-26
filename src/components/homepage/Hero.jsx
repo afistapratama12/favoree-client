@@ -142,7 +142,9 @@ const Hero = () => {
                         sm: '300px',
                         md: '300px',
                         xl: '400px'
-                    }}/>
+                    }}
+                        alt={'hero-circle'}
+                    />
                     <Image src={hero} 
                     mt={{
                         xl: '-340px',
@@ -161,6 +163,7 @@ const Hero = () => {
                             sm: "0px",
                             md: '30px'
                         }}
+                    alt={'hero-wallet'}
                     />
                 </Box>
             </Flex>

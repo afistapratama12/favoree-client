@@ -15,27 +15,33 @@ import { form_url } from "../../credential"
 const itemList = [{
     number: "1",
     name: 'Mengisi form disini',
-    imageSrc: fill_form_sm
+    imageSrc: fill_form_sm,
+    alt: 'fill-form'
 },{
     number: "2",
     name: 'Lakukan Pembayaran',
-    imageSrc: payment_sm
+    imageSrc: payment_sm,
+    alt: 'payment'
 },{
     number: "3",
     name: 'Upload Bukti Pembayaran',
-    imageSrc: send_payment_sm
+    imageSrc: send_payment_sm,
+    alt: 'upload-payment'
 },{
     number: "4",
     name: 'Menunggu Proses',
-    imageSrc: relax_sm
+    imageSrc: relax_sm,
+    alt: 'relax'
 },{
     number: "5",
     name: 'Uang diterima dan menerima pesan konfirmasi',
-    imageSrc: success_sm
+    imageSrc: success_sm,
+    alt: 'success'
 },{
     number: "6",
     name: 'Selesai',
-    imageSrc: done_sm
+    imageSrc: done_sm,
+    alt: 'done'
 }]
 
 
@@ -179,13 +185,13 @@ export const widthImage = (number) => {
 }
 
 export const CaraKerjaItem = (props) => {
-    const { number, name, imageSrc } = props
+    const { number, name, imageSrc, altImage } = props
 
-    const redirectToFormURL = (e) => {
-        e.preventDefault()
+    // const redirectToFormURL = (e) => {
+    //     e.preventDefault()
 
-        window.open(form_url, "_blank")
-    }
+    //     window.open(form_url, "_blank")
+    // }
 
     return (
         <Box
@@ -209,10 +215,12 @@ export const CaraKerjaItem = (props) => {
                     base: "80px",
                     sm: "80px",
                     md: '150px'
-                }}/>
+                }}
+                    alt={'workflow-circle'}
+                />
                 <Image src={imageSrc} mt={positionImage(number)}
                     width={widthImage(number)}
-                
+                    alt={altImage}
                 />
             </Box>
             <Flex
@@ -256,7 +264,7 @@ export const CaraKerjaItem = (props) => {
                             }}
                             maxW={'240px'} 
                             pl={4}
-                        >Mengisi form <Link onClick={redirectToFormURL} color={colorPallet.blue_four}>disini</Link> </Text>
+                        >Mengisi form <Link href={form_url} color={colorPallet.blue_four}>disini</Link> </Text>
                     ) : (
                         <Text 
                             ml={number === "6" ? "25px" : "auto"}
@@ -307,6 +315,7 @@ const CaraKerja = () => {
                             number={item.number}
                             name={item.name}
                             imageSrc={item.imageSrc}
+                            altImage={item.alt}
                         />
                     ))
                 }

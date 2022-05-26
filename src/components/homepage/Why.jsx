@@ -10,19 +10,23 @@ import { headingFontSize } from "../../prop_style"
 const WhyData = [{
     title: 'Aman',
     description: 'Favoree menjamin keamanan transaksi dengan menjamin garansi uang kembali 100%',
-    image : lock
+    image : lock,
+    alt: "lock-icon"
 },{
     title: 'Praktis',
     description: 'Transaksi dengan Favoree dapat dilakukan dimanapun dan kapanpun',
-    image : clock
+    image : clock,
+    alt: "clock-icon"
 }, {
     title: 'Harga Terjangkau',
     description: 'Favoree menawarkan biaya convert yang terjangkau',
-    image : dollar
+    image : dollar,
+    alt : "dollar-icon"
 }]
 
+
 const WhyItem = (props) => {
-    const {title, description, image} = props
+    const {title, description, image, altImage} = props
 
     return (
         <Box>
@@ -36,7 +40,7 @@ const WhyItem = (props) => {
                     align={'center'}
                     minWidth={'75px'}
                 >
-                    <Image src={image} pt={5}/>
+                    <Image src={image} pt={5} alt={altImage}/>
                 </Box>
                 <Box 
                     pl={{
@@ -100,6 +104,7 @@ const Why = () => {
                             title={item.title}
                             description={item.description}
                             image={item.image}
+                            altImage={item.alt}
                         />
                     ))
                 }

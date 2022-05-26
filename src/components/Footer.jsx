@@ -252,19 +252,19 @@ const Footer = () => {
                                     onClick={(e) => redirectToExternalUrl(e, 'https://www.twitter.com/favoree.id/')}
                                     cursor={'pointer'}
                                 >
-                                    <Image src={twitter}/>
+                                    <Image src={twitter} alt={'twitter-icon'}/>
                                 </Box>
                                 <Box
                                     onClick={(e) => redirectToExternalUrl(e, 'https://www.instagram.com/favoree.id/')}
                                     cursor={'pointer'}
                                 >
-                                    <Image src={instagram}/>
+                                    <Image src={instagram} alt={'instagram-icon'}/>
                                 </Box>
                                 <Box
                                     onClick={(e) => redirectToExternalUrl(e, 'https://www.facebook.com/favoree.id')}
                                     cursor={'pointer'}
                                 >
-                                    <Image src={facebook}/>
+                                    <Image src={facebook} alt={'facebook-icon'}/>
                                 </Box>
                             </Flex>
                         </Box>

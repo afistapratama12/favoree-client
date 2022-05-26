@@ -69,6 +69,7 @@ export const FAQItem = (props) => {
                         src={dropdown} 
                         boxSize={'20px'}
                         transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
+                        alt={'dropdown=button'}
                     />
                 </Flex>
             </Box>
@@ -141,9 +142,11 @@ const FAQ = () => {
                             base: '200px',
                             md: '300px',
                             xl: '350px'
-                        }}/>
+                        }}
+                            alt={'faq-circle'}
+                        />
 
-                        <Image src={faq} mt={'-450px'}/>
+                        <Image src={faq} mt={'-450px'} alt={'faq'}/>
                     </Box>
                 </Flex>
 

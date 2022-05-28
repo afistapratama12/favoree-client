@@ -12,22 +12,21 @@ import { colorPallet } from "../../theme"
 
 
 const testiData = [{
-    title : 'Mudah Banget',
+    title : 'Sangat Ingin Merekomendasikan Platform ini',
+    name: 'Ismail Habibi',
+    job: 'Pelajar',
+    text: `Jasa Convert dari Favoree.id sangat membantu masalah saya yang ingin pindah saldo e-wallet dengan cepat. Saya sangat ingin merekomendasikan platform ini.`
+},{
+    title : 'Sangat Puas',
     name: 'Rudi Oktaviansyah',
     job: 'Mahasiswa',
     text: 'Saya menggunakan platform ini untuk convert setiap hari, serasa mudah dan aman karena ada tempat laporan kendala dan customer service online 24 jam.'
 }, {
-    title : 'Mudah Banget 2',
-    name: 'Rudi Oktaviansyah 2',
-    job: 'Mahasiswa',
-    text: 'Saya menggunakan platform ini untuk convert setiap hari, serasa mudah dan aman karena ada tempat laporan kendala dan customer service online 24 jam.'
-}, {
-    title : 'Mudah Banget 3',
-    name: 'Rudi Oktaviansyah 3',
-    job: 'Mahasiswa',
-    text: 'Saya menggunakan platform ini untuk convert setiap hari, serasa mudah dan aman karena ada tempat laporan kendala dan customer service online 24 jam.'
+    title : 'Sangat Puas',
+    name: 'Lilis Suryani',
+    job: 'Wirausaha',
+    text: 'Pelayanan cepat, respon nya juga cepat, Terima kasih banyak Favoree.id. Saya sangat puas dengan pelayanan yang diberikan.'
 }]
-
 
 const Testimoni = () => {
     const [testi, setTesti] = useState(testiData[0])
@@ -115,7 +114,14 @@ const Testimoni = () => {
                                 xl: '60%'
                             }}
                         >
-                            <Box>
+                            <Box
+                                h={{
+                                    base: '280px',
+                                    sm: "240px",
+                                    md: '320px',
+                                    xl: '200px'
+                                }}
+                            >
                                 <Heading
                                     fontSize={{
                                         base: '20px',
@@ -123,7 +129,7 @@ const Testimoni = () => {
                                         md: '24px',
                                         xl: '30px'
                                     }}
-                                    pb={6}
+                                    pb={2}
                                 >"{testi.title}"</Heading>
                                 <Text
                                     lineHeight={{
@@ -140,7 +146,10 @@ const Testimoni = () => {
                                     }}
                                     color={'gray.600'}
                                 >{testi.text}</Text>
+                            </Box>
 
+
+                            <Box>
                                 <Text
                                     pt={4}
                                     lineHeight={{

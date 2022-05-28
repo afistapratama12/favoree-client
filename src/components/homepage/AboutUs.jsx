@@ -89,4 +89,4 @@ const AboutUs = () => {
 
 }
 
-export { AboutUs}
+export { AboutUs }

@@ -6,6 +6,8 @@ import ScrollTo from "react-scroll-into-view";
 import twitter from "../assets/vector/twitter.svg"
 import facebook from "../assets/vector/fb.svg"
 import instagram from "../assets/vector/instagram.svg"
+import logo_favoree from "../assets/image/logo_favoree.png"
+
 import { contact_number, hubungi_admin, laporkan_kendala } from "../credential";
 
 import  { useHistory } from  'react-router-dom'
@@ -146,14 +148,14 @@ const Footer = () => {
                                 sm: "80%",
                                base: "80%",
                            }}
-                        >
-                            <Heading
-                                fontSize={{
-                                    base: '27px',
-                                    sm: '28px',
-                                    md: '35px'
-                                }}
-                            >FAVOREE</Heading>
+                        >   
+                            <Image
+                                src={logo_favoree}
+                                ml={-2}
+                                mb={3}
+                                h={'40px'}
+                            />
+
                         </Box>
                         <Box
                             width={{

@@ -1,11 +1,11 @@
-import { Box, Button, Flex, Heading, Text, useBreakpointValue } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Image, Text, useBreakpointValue } from "@chakra-ui/react"
 import { useHistory } from "react-router-dom"
 import { form_url, laporkan_kendala } from "../credential"
 import { colorPallet } from "../theme"
 
+import logo_favoree from "../assets/image/logo_favoree.png"
 
 
-// DONE
 const Navbar = (props) => {  
     const { openButton } = props
 
@@ -24,8 +24,6 @@ const Navbar = (props) => {
         // get path now
         const path = window.location.pathname
 
-
-
         if (path !== "/") {
             //e.preventDefault()
             const aboutPageNode = document.getElementById('root')
@@ -42,11 +40,30 @@ const Navbar = (props) => {
                 <Flex
                     justifyContent={'space-between'}
                 >
-                    <Heading
-                        cursor={'pointer'}
+                    <Image
                         onClick={goToHome}
-                        fontSize={{ base: '22px', md: '3xl' }}
-                    >FAVOREE</Heading>
+                        src={logo_favoree}
+                        ml={{
+                            base: -2,
+                            sm: 0,
+                            md: 0,
+                            xl: 0,
+                        }}
+
+                        mt={{
+                            base: 1,
+                            sm: 1,
+                            md: 0,
+                            xl:0
+                        }}
+
+                        h={{
+                            base: '25px',
+                            sm: '30px',
+                            md: '40px',
+                            xl: '40px'
+                        }}
+                    />
 
                     { openButton && <Flex>
                         <Button

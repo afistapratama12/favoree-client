@@ -13,7 +13,7 @@ const questionItems = [{
     answer: 'Cukup klik tombol "Mulai Convert" di halaman beranda, lalu masukkan nomor e-wallet kamu, masukkan nomor e-wallet tujuan dan bukti pengiriman pada nomor e-wallet Favoree. Jika sudah, klik tombol kirim dan kamu akan menerima konfirmasi transaksi melalui WhatsApp!'
 },{
     question : "Berapa biaya admin untuk transaksi e-wallet ?",
-    answer: 'Favoree menawarkan biaya transaksi convert e-wallet yang terjangkau. Kamu cukup membayar Rp. 1000 untuk setiap transaksi yang kamu ajukan.'
+    answer: 'Favoree menawarkan biaya transaksi convert e-wallet yang terjangkau. Kamu cukup membayar Rp. 1000 untuk setiap transaksi dengan pengajuan maksimal Rp 500.000. Jika kamu memiliki transaksi yang lebih besar diatas Rp. 500.000, maka akan dipotong biaya admin Rp. 2.000. Dan khusus untuk pembayaran menggunakan QRIS akan dikenakan biaya admin Rp 2.000 setiap transaksi.'
 },{
     question : "Apakah transaksi dengan Favoree aman ?",
     answer: 'Favoree menerapkan keamanan ganda pada data pribadi seluruh pengguna Favoree dan menjamin keamanan semua proses transaksi yang terjadi di Favoree dengan jaminan uang kembali.'

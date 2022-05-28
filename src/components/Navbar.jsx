@@ -1,4 +1,4 @@
-import { Box, Button, Flex, Heading, Image, Text, useBreakpointValue } from "@chakra-ui/react"
+import { Box, Button, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react"
 import { useHistory } from "react-router-dom"
 import { form_url, laporkan_kendala } from "../credential"
 import { colorPallet } from "../theme"
@@ -41,6 +41,7 @@ const Navbar = (props) => {
                     justifyContent={'space-between'}
                 >
                     <Image
+                        cursor={'pointer'}
                         onClick={goToHome}
                         src={logo_favoree}
                         ml={{

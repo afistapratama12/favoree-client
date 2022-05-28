@@ -151,7 +151,7 @@ const Footer = () => {
                         >   
                             <Image
                                 src={logo_favoree}
-                                ml={-2}
+                                ml={-1}
                                 mb={3}
                                 h={'40px'}
                             />

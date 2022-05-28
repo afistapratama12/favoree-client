@@ -244,7 +244,7 @@ const Footer = () => {
                                 pt={4}
                             >Jam Operasi</Text>
                             <Text>Setiap Hari</Text>
-                            <Text>09.00 - 21.00 WIB</Text>
+                            <Text>09.00 - 22.00 WIB</Text>
 
                             <Flex
                                 mt={6}

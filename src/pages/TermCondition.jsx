@@ -1,6 +1,7 @@
 import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import { Footer } from '../components/Footer';
 import { Navbar } from '../components/Navbar';
+import { phone_number } from '../credential';
 import { colorPallet } from '../theme';
 
 export const fontSizeTNC = {
@@ -46,7 +47,7 @@ const TermCondition = () => {
     const sendMessage = (e) => {
         e.preventDefault()
 
-        window.open('https://wa.me/082141473723', '_blank');
+        window.open("https://wa.me/" + phone_number, '_blank');
     }
 
   return (
@@ -79,7 +80,7 @@ const TermCondition = () => {
                 sm: 'lg',
                 md: 'xl',
                 xl: 'xl'
-            }}>Terakhir diperbarui : 25 May 2022</Text>
+            }}>Terakhir diperbarui : 28 May 2022</Text>
             <Text fontSize={fontSizeTNC} mt={4}>
               Selamat datang di Platform Favoree.id, terimakasih telah
               menggunakan maupun mengakses Layanan Favoree.id melalui Platform.
@@ -338,14 +339,23 @@ const TermCondition = () => {
             </Text>
 
             <UnorderedList fontSize={fontSizeTNC} pl={2}>
-              <ListItem>Gopay : 0821 4147 3723 </ListItem>
-              <ListItem>Shopeepay : 0821 4147 3723</ListItem>
-              <ListItem>OVO : 0821 4147 3723</ListItem>
-              <ListItem>Dana : 0821 4147 3723</ListItem>
+              <ListItem>Gopay : 0857 3665 3576 </ListItem>
+              <ListItem>Shopeepay : 0857 3665 3576</ListItem>
+              <ListItem>OVO : 0857 3665 3576</ListItem>
+              <ListItem>Dana : 0857 3665 3576</ListItem>
             </UnorderedList>
             <Text mt={4} fontSize={fontSizeTNC}>
-              Pengguna bersedia melakukan pembayaran dengan total nominal sesuai dengan pesanan dengan dipotong sebesar 1.000 rupiah untuk biaya administrasi. Saat ini kami membatasi pembayaran saldo maksimal 1.000.000 rupiah per transaksi atau per pengajuan convert.
+            Atau dapat menggunakan metode lain untuk pengguna yang belum melakukan 
+            verifikasi e-wallet dengan scan barcode QRIS yang tertera di dalam form pengajuan convert.
             </Text>
+            <Text mt={4} fontSize={fontSizeTNC}>
+            Saat ini kami membatasi pembayaran saldo maksimal 1.000.000 rupiah per transaksi 
+            atau per pengajuan convert. Pengguna bersedia melakukan pembayaran dengan total pesanan minimal 10.000 sampai 500.000 rupiah 
+            dengan dipotong sebesar 1.000 rupiah untuk biaya administrasi. Pesanan dengan pengajuan transaksi diatas 500.000 rupiah akan 
+            dikenakan biaya administrasi sebesar 2.000 rupiah. Pengguna dengan pengajuan menggunakan pembayaran QRIS akan dipotong 
+            biaya administrasi sebesar 2.000 rupiah.
+            </Text>
+
           </Box>
 
           <Box mt={4}>
@@ -372,7 +382,7 @@ const TermCondition = () => {
             <Text fontSize={fontSizeTNC}>
               Anda dapat menghubungi Kami terkait dengan Kebijakan Privasi dan
               Ketentuan Penggunaan melalui surat elektronik <Text as="span" color={colorPallet.blue_four} cursor={'pointer'} onClick={sendEmail} >{" favoree.id@gmail.com "}</Text> 
-              atau melalui nomor telepon <Text as={'span'} color={colorPallet.blue_four} cursor={'pointer'} onClick={sendMessage}>082141473723</Text>.
+              atau melalui nomor telepon <Text as={'span'} color={colorPallet.blue_four} cursor={'pointer'} onClick={sendMessage}>085736653576</Text>.
             </Text>
           </Box>
         </Box>

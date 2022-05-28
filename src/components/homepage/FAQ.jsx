@@ -111,7 +111,7 @@ const FAQ = () => {
                 >
                     <Heading
                         fontSize={headingFontSize}
-                    >Frequently Asked Questions</Heading>
+                    >Pertanyaan Seputar Favoree.id</Heading>
                 </Box>
 
                 <Flex>

@@ -1,6 +1,6 @@
 import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
+import { Footer } from '../components/redesign/Footer';
+import { Navbar } from '../components/redesign/Navbar';
 import { phone_number } from '../credential';
 import { colorPallet } from '../theme';
 
@@ -52,8 +52,8 @@ const TermCondition = () => {
 
   return (
     <>
-      <Navbar />
-      <Box maxW={'6xl'} margin={'auto'}>
+      <Navbar/>
+      <Box maxW={'6xl'} margin={'auto'} mt={'15vh'}>
         <Box
           mx={{
             base: 8,
@@ -388,7 +388,7 @@ const TermCondition = () => {
         </Box>
       </Box>
 
-      <Footer />
+      <Footer/>
     </>
   );
 };

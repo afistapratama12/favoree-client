@@ -288,7 +288,6 @@ const CaraKerja = () => {
         <>
         <Box
             id="cara_kerja"
-            class="cara_kerja"
             align={'center'}
             mt={'100px'}
         > 

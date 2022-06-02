@@ -3,7 +3,6 @@ import {
   ChakraProvider,
 } from '@chakra-ui/react';
 // import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Homepage } from './pages/Homepage';
 import { theme } from './theme';
 import Helmet from 'react-helmet';
 
@@ -18,6 +17,7 @@ import { PageNotFound } from './pages/PageNotFound';
 
 import { path } from './routes/route';
 import ScrollToTop from './ScrollToTop';
+import { RedesignHomePage } from './pages/RedesignHome';
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
         <Router>
           <ScrollToTop>
           <Switch>
-              <Route exact path={path.home} component={Homepage}/>
+              <Route exact path={path.home} component={RedesignHomePage}/>
               <Route exact path={path.termAndCondition} component={TermCondition}/>
               <Route path={path.any} component={PageNotFound}/>
           </Switch>

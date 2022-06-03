@@ -36,7 +36,7 @@ export const TestimoniItemMobile = ({title, name , text}) => {
             
             h={{
                 base: '37vh',
-                sm: '25vh',
+                sm: '35vh',
                 md:'33vh',
                 xl: '33vh'
             }}
@@ -82,7 +82,7 @@ export const TestimoniItem = ({ title, name, text}) => {
     return (
         <Box
             bgColor={'#E8F9FD'}
-            w={'46%'}
+            w={'48%'}
             
             h={{
                 xl: '30vh',
@@ -91,7 +91,7 @@ export const TestimoniItem = ({ title, name, text}) => {
                 base: '40vh'
             }}
             my={10}
-            mx={4}
+            mx={2}
             borderRadius={'3xl'}
         >
 
@@ -146,7 +146,19 @@ export const Testimoni = () => {
         >
 
             <Box
-                my={16}
+                mt={{
+                    xl:20,
+                    md: 20,
+                    sm: 20,
+                    base: 16
+                }}
+                mb={{
+                    base: 10,
+                    sm: 12,
+                    md: 16,
+                    xl: 16
+                }}
+
                 align={'center'}
             >
                 <Heading
@@ -156,7 +168,7 @@ export const Testimoni = () => {
                     width > 768 && (
                         <HStack
                             wrap={'wrap'}
-                            justifyContent={'space-around'}
+                            justifyContent={'space-between'}
                         >
                             {
                                 testiData.map((item, index) => {

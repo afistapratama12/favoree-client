@@ -71,7 +71,7 @@ const marginTextResponsive = (numb) => {
             return {
                 xl: '6vh',
                 md: '6vh',
-                sm: '3vh',
+                sm: '5vh',
                 base: '3vh'
             }
         case '5':            
@@ -85,7 +85,7 @@ const marginTextResponsive = (numb) => {
             return {
                 xl: '3vh',
                 md: '3vh',
-                sm: '5vh',
+                sm: '3vh',
                 base: '5vh'
             }
         default:
@@ -97,43 +97,43 @@ const imageResize = (numb) => {
     switch (numb) {
         case "1":
             return {
-                base: 'auto',
-                sm: 'auto',
+                base: '45vh',
+                sm: '32vh',
                 md: 'auto',
                 xl:'auto'
             }
         case "2":
             return {
                 base: '20vh',
-                sm: '20vh',
+                sm: '26vh',
                 md: 'auto',
                 xl:'auto'
             }
         case "3":
             return {
                 base: '19vh',
-                sm: '19vh',
+                sm: '25vh',
                 md: 'auto',
                 xl:'auto'
             }
         case "4":
             return {
-                base: 'auto',
-                sm: 'auto',
+                base: '24vh',
+                sm: '29vh',
                 md: 'auto',
                 xl:'auto'
             }
         case "5":
             return {
                 base: '18vh',
-                sm: '18vh',
+                sm: '24vh',
                 md: 'auto',
                 xl:'auto'
             }
         case "6":
             return {
                 base: '21vh',
-                sm: '21vh',
+                sm: '27vh',
                 md: 'auto',
                 xl:'auto'
             }
@@ -200,7 +200,7 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
                         <Text 
                             pt={{
                                 base: 0,
-                                sm: 2,
+                                sm: 0,
                                 md :2,
                                 xl :2
                             }}

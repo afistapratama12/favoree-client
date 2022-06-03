@@ -18,21 +18,38 @@ export const HasProblem = () => {
                 bg={'#F7EED2'}
                 borderRadius={'20px'}
                 w={'80vw'}
-                h={{
-                    base: '55vh',
-                    sm: '45vh',
-                    md: '45vh',
-                    xl: '45vh'
-                }}
+                
+                h={'100%'}
+                
+                // h={{
+                //     base: '55vh',
+                //     sm: '45vh',
+                //     md: '45vh',
+                //     xl: '45vh'
+                // }}
                 align={'center'}
             >
                 <HStack
-                    p={{
-                        base: 2,
-                        sm: 3,
-                        md: 6,
-                        xl: 6
+                    py={{
+                        base:4,
+                        sm:6,
+                        md:2,
+                        xl:2    
                     }}
+                    
+                    px={{
+                        base:4,
+                        sm:2,
+                        md:8,
+                        xl:8 
+                    }}
+
+                    // p={{
+                    //     base: 2,
+                    //     sm: 3,
+                    //     md: 6,
+                    //     xl: 6
+                    // }}
                     justifyContent={{
                         xl: 'space-between',
                         md: 'space-between',

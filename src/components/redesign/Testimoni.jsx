@@ -1,8 +1,7 @@
 import { Box, Heading, HStack, Text } from "@chakra-ui/react"
 import { section_heading, text_description } from "../../responsive"
 
-
-import HorizontalScroll from "react-scroll-horizontal";
+import ReactSwipe from 'react-swipe';
 import useWindowDimensions from "../../useWindowDimension";
 
 const testiData = [{
@@ -130,6 +129,7 @@ export const TestimoniItem = ({ title, name, text}) => {
 
 
 export const Testimoni = () => {
+    let reactSwipeEl;
 
     const { width } = useWindowDimensions()
 
@@ -177,26 +177,32 @@ export const Testimoni = () => {
             {
                 width < 768 && (
                     <Box>
-                    <HorizontalScroll
+                    {/* <HorizontalScroll
                         pageLock={false}
                         reverseScroll={true}
                         style={{ width: `90vw`, height: `40vh`}}
-                    >
-                        {
-                            testiData.map((item, index) => {
-                                return (
-                                    <Box key={index}>
-                                        <TestimoniItemMobile
-                                            title={item.title}
-                                            name={item.name}
-                                            text={item.text}
-                                        />
-                                    </Box>
-                                )
-                            })
-                        }
-    
-                    </HorizontalScroll>
+                    > */}
+
+                        <ReactSwipe
+                            className="carousel"
+                            swipeOptions={{continuous: false, speed: 500}}
+                            ref={el => {reactSwipeEl = el}}
+                        >
+                            {
+                                testiData.map((item, index) => {
+                                    return (
+                                        <Box key={index}>
+                                            <TestimoniItemMobile
+                                                title={item.title}
+                                                name={item.name}
+                                                text={item.text}
+                                            />
+                                        </Box>
+                                    )
+                                })
+                            }
+                        </ReactSwipe>
+                    {/* </HorizontalScroll> */}
                 </Box>
 
                 )

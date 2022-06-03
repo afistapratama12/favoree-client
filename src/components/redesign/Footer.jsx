@@ -223,7 +223,7 @@ export const Footer = (props) => {
                             >Contact Number</Text>
                             
                             <FooterSectionItem
-                                title={'082333703158'}
+                                title={'0857-3665-3576'}
                                 is_internal={false}
                                 url={contact_number}       
                             />

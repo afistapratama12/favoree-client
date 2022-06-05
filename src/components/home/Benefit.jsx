@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react"
-import { color_base } from "./Navbar"
+import { color_base } from "../Navbar"
 
 import lock from "../../assets/image/redesign/lock.svg"
 import clock from "../../assets/image/redesign/clock.svg"
@@ -142,7 +142,7 @@ export const Benefit = () => {
                     base: '92vw',
                     sm: '92vw',
                     md: '85vw',
-                    xl: '85vw'
+                    xl: '6.5xl'
                 }} margin={'auto'}
                 align={'center'}
             >

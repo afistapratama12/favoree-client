@@ -1,23 +1,118 @@
-import { Box, Button, Flex, Image, Text, useBreakpointValue } from "@chakra-ui/react"
+import { Box, Button, HStack, Image, Text, useBreakpointValue } from "@chakra-ui/react"
+import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
-import { form_url, laporkan_kendala } from "../credential"
-import { colorPallet } from "../theme"
 
-import logo_favoree from "../assets/image/logo_favoree.png"
+import ScrollTo from "react-scroll-into-view";
+
+import favoree_logo from '../assets/image/logo_favoree.png'
+import { form_url, laporkan_kendala } from "../credential";
+
+export const color_base = {
+    greenblue: '#43919B',
+    yellow: '#FAC213',
+    white: '#FCFCFC',
+    blue: '#0AA1DD',
+    black: "#000000"
+}
+
+export const color_hover = {
+    greenblue: '#237883',
+    yellow: '#EDB300',
+}
+
+export const CustomButton = (props) => {
+    const { bgColor, color, m, value, hoverColor, isExternal, url, ...childProps } = props
+
+    const buttonSize = useBreakpointValue(['sm', 'md'], 'w-full', 'w-auto')
+
+    return (
+        <Button
+            bgColor={bgColor}
+            borderRadius={'100px'}
+            _hover={{
+                backgroundColor: hoverColor
+            }}
+            _active={{
+                backgroundColor: bgColor
+            }}
+            onClick={() => {
+                if (isExternal) {
+                    window.open(url, '_blank')
+                }
+            }}
+            size={buttonSize}
+            {...childProps}
+        >
+            {
+                isExternal ? (
+                <Text
+                    color={color || 'black'}
+                    m={m}
+                    fontWeight={'bold'}
+                    fontSize={{
+                        xl: '16px',
+                        md: '16px',
+                        sm: '14px',
+                        base: '13px',
+                    }}
+                >
+                    {value}
+                </Text>
+
+                ) : (
+                <ScrollTo
+                selector={url} scrollOptions={{
+                    duration: 1000,
+                    delay: 100,
+                    smooth: true,
+                    offset: -100,
+                    block: "center",
+                    inline: 'center'
+                }}
+                >
+                    <Text
+                        color={color || 'black'}
+                        m={m}
+                        fontWeight={'bold'}
+                        fontSize={{
+                            xl: '16px',
+                            md: '16px',
+                            sm: '14px',
+                            base: '13px',
+                        }}
+                    >
+                        {value}
+                    </Text>
+                </ScrollTo>
+                )
+            }
 
 
-const Navbar = (props) => {  
-    const { openButton } = props
+        </Button>
+    )
+}
 
+export const Navbar = ({isShowButton}) => {
     const history = useHistory()
-    
-    const buttonSize = useBreakpointValue({ base: "sm", sm: "sm", md: "md"})
 
-    const redirectURL = (e, url) => {
-        e.preventDefault()
+    const [stickyClass, setStickyClass] = useState({
+        zIndex: '10'
+    })
 
-        // open new tab and redirect to form
-        window.open(url, '_blank')
+    useEffect(() => {
+        window.addEventListener('scroll', stickyNavbar)
+    },[])
+
+    const stickyNavbar = () => {
+        if (window !== undefined) {
+            let windowHeight = window.scrollY
+            windowHeight > 0 ? setStickyClass({
+                boxShadow: 'lg',
+                zIndex: '10',
+            }) : setStickyClass({
+                zIndex: '10'
+            })
+        }
     }
 
     const goToHome = (e) => {
@@ -34,97 +129,74 @@ const Navbar = (props) => {
     }
 
     return (
-        <>
-            <Box bg={colorPallet.blue_one}>
-            <Box maxW={'7xl'} margin={'auto'} py={6} textAlign={'center'} px={4}>
-                <Flex
-                    justifyContent={'space-between'}
-                >
-                    <Image
-                        cursor={'pointer'}
-                        onClick={goToHome}
-                        src={logo_favoree}
-                        ml={{
-                            base: -2,
-                            sm: 0,
-                            md: 0,
-                            xl: 0,
-                        }}
-
-                        mt={{
-                            base: 1,
-                            sm: 1,
-                            md: 0,
-                            xl:0
-                        }}
-
-                        h={{
-                            base: '25px',
-                            sm: '30px',
-                            md: '40px',
-                            xl: '40px'
-                        }}
-                    />
-
-                    { openButton && <Flex>
-                        <Button
-                            bg={colorPallet.blue_four}
-                            color={'white'}
-                            borderRadius={'100px'}
-                            _hover={{
-                                bg: '#0A42C1'
+        <Box
+            position={'fixed'}
+            w={'100vw'}
+            top={'0'}
+            left={'0'}
+            backgroundColor='#F8FBFD'
+            {...stickyClass}
+        >
+            <HStack 
+                maxW={{
+                    base: '90vw',
+                    sm : '90vw',
+                    md: '85vw',
+                    xl: '1210px'
+                }} 
+                margin={'auto'}
+                justifyContent={'space-between'}
+                my={4}
+                alignItems={'center'}
+            >
+                <Image
+                    alt={'favoree_logo'}
+                    src={favoree_logo}
+                    
+                    
+                    w={{
+                        base: '22vw',
+                        sm : '22vw',
+                        md : '150px',
+                        xl : '170px'
+                    }}
+                    onClick={goToHome}
+                    cursor={'pointer'}
+                />
+                
+                {
+                    isShowButton && (
+                        <HStack>
+                            <Box
+                            pr={{
+                                base: 0,
+                                sm: 0,
+                                md: 2,
+                                xl: 2
                             }}
-                            _active={{
-                                bg: '#4679EE'
-                            }}
-                            size={buttonSize}
-                            onClick={e => redirectURL(e, form_url)}
-                        >
-                            <Text
-                                fontSize={{
-                                    base: 'sm',
-                                    sm: 'sm',
-                                    md: 'md',
-                                    xl: 'lg'
-                                }}>  Yuk Mulai
-
-                            </Text>
-                           
-                        </Button>
-                        <Button
-                            ml={{
-                                base: 1,
-                                sm: 2,
-                                md: 5,
-                            }}
-                            bg={colorPallet.blue_two}
-                            borderRadius={'100px'}
-                            _hover={{
-                                bg: '#8CE7FD'
-                            }}
-                            _active={{
-                                bg: '#D1F6FF'
-                            }}
-                            size={buttonSize}
-                            onClick={e => redirectURL(e, laporkan_kendala)}
-                        >
-                            <Text
-                                fontSize={{
-                                    base: 'sm',
-                                    sm: 'sm',
-                                    md: 'md',
-                                    xl: 'lg'
-                                }}
                             >
-                                Laporkan Kendala
-                            </Text>
-                        </Button>
-                    </Flex> }
-                </Flex>
-            </Box>
-            </Box>
-        </>
+                            <CustomButton
+                                    bgColor={color_base.greenblue}
+                                    hoverColor={color_hover.greenblue}
+                                    color={color_base.white}
+                                    m={1}
+                                    value={'Yuk Mulai'}
+                                    isExternal={true}
+                                    url={form_url}
+                            />
+                            </Box> 
+                            <CustomButton
+                                bgColor={color_base.yellow}
+                                hoverColor={color_hover.yellow}
+                                m={1}
+                                value={'Ajukan Kendala'}
+                                isExternal={true}
+                                url={laporkan_kendala}
+                            />
+                        </HStack>
+                    )
+                }
+            </HStack>
+        </Box>
     )
 }
-
-export { Navbar }

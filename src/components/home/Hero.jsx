@@ -1,5 +1,5 @@
 import { Box, Button, Flex, Heading, HStack, Image, Text, useBreakpointValue } from "@chakra-ui/react"
-import { color_base, color_hover, CustomButton } from "./Navbar"
+import { color_base, color_hover, CustomButton } from "../Navbar"
 
 import hero from "../../assets/image/redesign/hero.svg"
 import { form_url } from "../../credential"
@@ -12,7 +12,12 @@ export const Hero = () => {
 
     return (
         <Box
-            maxW={width_sizing}
+            maxW={{
+                xl: '80vw',
+                md: '80vw',
+                sm: '90vw',
+                base: '90vw'
+            }}
             margin={'auto'}
             mb={'13vh'}
             mt={'15vh'}
@@ -157,8 +162,8 @@ export const Hero = () => {
                     alt={'hero_image'}
                     src={hero}
                     w={{
-                        xl:'auto',
-                        md:'auto',
+                        xl:'60vh',
+                        md:'55vh',
                         base:'30vh',
                         sm:'35vh'
                     }}

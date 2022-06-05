@@ -28,7 +28,7 @@ export const logo_responsive = {
 }
 
 export const width_sizing = {
-    xl: '80vw',
+    xl: '6xl',
     md: '80vw',
     sm: '90vw',
     base: '90vw',

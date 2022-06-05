@@ -1,12 +1,14 @@
-import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
+import { Box, Heading, HStack, Image, Text, Flex } from "@chakra-ui/react"
 
-import { headingFontSize } from "../../prop_style"
-import basecircle from "../../assets/image/basecircle.svg"
-import dropdown from "../../assets/vector/dropdown.svg"
-
-import faq from "../../assets/image/faq_md.png"
+import faq from "../../assets/image/redesign/faq.svg"
 import { colorPallet } from "../../theme"
+
+import dropdown from '../../assets/image/redesign/dropdown.svg'
+import dropWhite from '../../assets/image/redesign/drop_white.svg'
+
 import { useState } from "react"
+import { color_base } from "../Navbar"
+import { section_heading } from "../../responsive"
 
 const questionItems = [{
     question : "Bagaimana cara transaksi dengan Favoree ?",
@@ -25,10 +27,10 @@ const questionItems = [{
     answer : 'Proses transaksi di Favoree membutuhkan waktu 1-2 jam saja. Kamu akan mendapatkan pesan konfirmasi melalui Whatsapp terkait dengan transaksi kamu. Jadi pastikan menyertakan nomor yang tersambung dengan aplikasi WhatsApp.'
 }]
 
-export const FAQItem = (props) => {
-    const { question, answer } = props
-
+export const FAQItem = ({ question, answer, ...props }) => {
     const [isOpen, setIsOpen] = useState(false)
+
+    const [image, setImage] = useState(dropdown)
 
     return (
         <Box
@@ -36,9 +38,9 @@ export const FAQItem = (props) => {
         >
             <Box
                 position={'relative'}
-                zIndex={'5'}
+                zIndex={'0'}
                 cursor={'pointer'}
-                bg={isOpen ? colorPallet.blue_two : colorPallet.blue_one}
+                bg={isOpen ? color_base.greenblue : colorPallet.blue_one}
                 minW={{
                     xl : '820px',
                     md: '60vw',
@@ -55,21 +57,35 @@ export const FAQItem = (props) => {
                 borderRadius={'20px'}
                 onClick={() => setIsOpen(!isOpen)}
                 _hover={{
-                    bg: colorPallet.blue_two
+                    bg: color_base.greenblue
                 }}
+
+                onMouseEnter={() => setImage(dropWhite)}
+                onMouseLeave={() => setImage(dropdown)}
             >
                 <Flex
                     justifyContent={'space-between'}
                     p={4}
                     px={6}
                     alignItems={'center'}
+                    color={isOpen ? color_base.white : 'black'}
+                    _hover={{
+                        color: color_base.white
+                    }}
                 >
-                    <Text>{question}</Text>
+                    <Text
+                        fontSize={{
+                            xl: '16px',
+                            md: '16px',
+                            sm: '14px',
+                            base: '13px',
+                        }}
+                    >{question}</Text>
                     <Image 
-                        src={dropdown} 
+                        src={isOpen ? dropWhite : image} 
                         boxSize={'20px'}
                         transform={isOpen ? 'rotate(180deg)' : 'rotate(0deg)'}
-                        alt={'dropdown=button'}
+                        alt={'dropdown-button'}
                     />
                 </Flex>
             </Box>
@@ -88,8 +104,12 @@ export const FAQItem = (props) => {
                     base: "92vw" 
                 }}
                 fontSize={{
-                    base: '15px',
+                    xl: '16px',
+                    md: '16px',
+                    sm: '14px',
+                    base: '13px',
                 }}
+                lineHeight={'26px'}
             >
                 {answer}
             </Box>
@@ -97,62 +117,62 @@ export const FAQItem = (props) => {
     )
 }
 
-const FAQ = () => {
+
+export const FAQ = () => {
     return (
-        <>
+        <Box
+            id={'faq'}
+            maxW={{
+                xl: '6.5xl',
+                md: '85vw',
+                sm: "92vw",
+                base: '92vw'
+            }}
+            margin={'auto'}
+        > 
             <Box
-                id="faq"
-                class="faq"
-                mt={'140px'}
-                mb={'90px'}
+                my={{
+                    xl: 24,
+                    md: 24,
+                    sm: 16,
+                    base: 16
+                }}
             >
-                <Box
-                    mb={4}
+                <Heading
+                    fontSize={section_heading}
+                >Pertanyaan Seputar Favoree.id</Heading>
+
+                <HStack
+                    mt={{
+                        base: 3,
+                        sm: 3,
+                        md: 10,
+                        xl: 10
+                    }}
+                    align={'top'}
                 >
-                    <Heading
-                        fontSize={headingFontSize}
-                    >Pertanyaan Seputar Favoree.id</Heading>
-                </Box>
-
-                <Flex>
                     <Box>
-                        { 
-                            questionItems.map((item, idx) => (
-                                <FAQItem 
-                                    key={idx}
-                                    question={item.question}
-                                    answer={item.answer}
-                                />
-                            ))
+                        {
+                            questionItems.map((item, index) => {
+                                return (
+                                    <FAQItem
+                                        key={index}
+                                        question={item.question}
+                                        answer={item.answer}
+                                    />
+                                )
+                            })
                         }
-
                     </Box>
 
-                    <Box
-                        display={{
-                            base: "none",
-                            sm: "none",
-                            md: "block",
-                            xl: "block"
-                        }}
-                        align={'center'}
-                        mt={24}
-                    >
-                        <Image src={basecircle} boxSize={{
-                            base: '200px',
-                            md: '300px',
-                            xl: '350px'
-                        }}
-                            alt={'faq-circle'}
+                    <Box>
+                        <Image
+                            alt={'faq'}
+                            src={faq}
                         />
-
-                        <Image src={faq} mt={'-450px'} alt={'faq'}/>
                     </Box>
-                </Flex>
-
+                </HStack>
             </Box>
-        </>
+        </Box>
     )
 }
-
-export { FAQ }

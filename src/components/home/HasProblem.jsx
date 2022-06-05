@@ -1,23 +1,31 @@
 import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react"
-import { color_base, color_hover, CustomButton } from "./Navbar"
+import { color_base, color_hover, CustomButton } from "../Navbar"
 
 
 import submit_problem from "../../assets/image/redesign/submit_problem.svg"
 import { text_description } from "../../responsive"
 import { laporkan_kendala } from "../../credential"
+import useWindowDimensions from "../../useWindowDimension"
 
 export const HasProblem = () => {
+
+    const { width } = useWindowDimensions()
+
     return (
         <Box
-            maxW='80vw'
+            maxW={'80vw'}
             margin={'auto'}
+            align={'center'}
         >
 
             <Box
                 my={4}
                 bg={'#F7EED2'}
                 borderRadius={'20px'}
-                w={'80vw'}
+                w={{
+                    xl: width >= 1100 ? '1100px' : '80vw' ,
+                    md: '80vw'
+                }}
                 
                 h={'100%'}
                 

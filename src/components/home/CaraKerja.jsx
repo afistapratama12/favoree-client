@@ -1,4 +1,4 @@
-import { Box, Heading, HStack, Image, Link, Text, VStack } from "@chakra-ui/react"
+import { Box, Flex, Heading, HStack, Image, Link, Text, VStack } from "@chakra-ui/react"
 
 
 import ck1 from "../../assets/image/redesign/cara_kerja_1.svg"
@@ -9,7 +9,7 @@ import ck5 from "../../assets/image/redesign/cara_kerja_5.svg"
 import ck6 from "../../assets/image/redesign/cara_kerja_6.svg"
 import { form_url } from "../../credential"
 import { section_heading, text_description } from "../../responsive"
-import { color_base } from "./Navbar"
+import { color_base } from "../Navbar"
 
 const itemList = [{
     number: "1",
@@ -48,8 +48,8 @@ const marginTextResponsive = (numb) => {
     switch (numb) {
         case '1':            
             return {
-                xl: '8vh',
-                md: '8vh',
+                xl: '5vh',
+                md: '5vh',
                 sm: '2vh',
                 base: '2vh'
             }
@@ -69,8 +69,8 @@ const marginTextResponsive = (numb) => {
             }
         case '4':            
             return {
-                xl: '6vh',
-                md: '6vh',
+                xl: '5vh',
+                md: '5vh',
                 sm: '5vh',
                 base: '3vh'
             }
@@ -86,7 +86,7 @@ const marginTextResponsive = (numb) => {
                 xl: '3vh',
                 md: '3vh',
                 sm: '3vh',
-                base: '5vh'
+                base: '2vh'
             }
         default:
             break;
@@ -97,7 +97,7 @@ const imageResize = (numb) => {
     switch (numb) {
         case "1":
             return {
-                base: '45vh',
+                base: '23vh',
                 sm: '32vh',
                 md: 'auto',
                 xl:'auto'
@@ -147,8 +147,8 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
         <VStack key={idx} w={{
             base: '45%',
             sm: '45%',
-            md: '20%',
-            xl: '20%'
+            md: '25%',
+            xl: '25%'
         }}
             pb={{
                 base: 6,
@@ -158,7 +158,7 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
             }}
         >
                     <Image
-                    w={imageResize(numb)}
+                    maxW={imageResize(numb)}
                     alt={alt}
                     src={imageSrc}
                 />
@@ -240,7 +240,7 @@ export const CaraKerja = () => {
                 base: '90vw',
                 sm: '90vw',
                 md: '85vw',
-                xl: '85vw'
+                xl: '6.5xl'
             }}
             margin={'auto'}
             id={'cara-kerja'}
@@ -254,7 +254,7 @@ export const CaraKerja = () => {
                 >Cara Kerja</Heading>
             </Box>
 
-            <HStack
+            <Flex
                 my={'10vh'}
                 wrap={'wrap'}
                 justifyContent={'space-around'}
@@ -273,7 +273,7 @@ export const CaraKerja = () => {
                         )
                     })
                 }
-            </HStack>
+            </Flex>
         </Box>
     )
 }

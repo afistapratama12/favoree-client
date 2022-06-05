@@ -30,7 +30,7 @@ export const TestimoniItemMobile = ({title, name , text}) => {
             //w={'46%'}
             boxShadow={'md'}
 
-            w={'90vw'}
+            w={'85vw'}
 
             align={'center'}
             
@@ -140,7 +140,7 @@ export const Testimoni = () => {
                 base: '95vw',
                 sm: '95vw',
                 md: '85vw',
-                xl: '85vw'
+                xl: '6.5xl'
             }}
             margin={'auto'}
         >
@@ -203,7 +203,8 @@ export const Testimoni = () => {
                             {
                                 testiData.map((item, index) => {
                                     return (
-                                        <Box key={index}>
+                                        <Box key={index}
+                                        >
                                             <TestimoniItemMobile
                                                 title={item.title}
                                                 name={item.name}
@@ -214,6 +215,7 @@ export const Testimoni = () => {
                                 })
                             }
                         </ReactSwipe>
+
                     {/* </HorizontalScroll> */}
                 </Box>
 

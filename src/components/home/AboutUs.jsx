@@ -8,7 +8,7 @@ export const AboutUs = () => {
         <Box
             id={'about_us'}
             maxW={{
-                xl: '85vw',
+                xl: '6.5xl',
                 md: '85vw',
                 sm: '90vw',
                 base: '90vw'

@@ -23,9 +23,9 @@ export const HomePage = () => {
         <Box>
             <Hero/>
 
-            <AboutUs/>
-
             <Benefit/>
+            
+            <AboutUs/>
 
             <CaraKerja/>
 

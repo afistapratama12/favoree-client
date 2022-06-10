@@ -13,7 +13,12 @@ export const HasProblem = () => {
 
     return (
         <Box
-            maxW={'80vw'}
+            maxW={{
+                base: '90vw',
+                sm: '90vw',
+                md: '80vw',
+                xl: '80vw'
+            }}
             margin={'auto'}
             align={'center'}
         >

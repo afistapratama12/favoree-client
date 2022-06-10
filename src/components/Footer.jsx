@@ -125,7 +125,13 @@ export const Footer = (props) => {
     return (
         <Box
             bgColor={'#003E66'}
-            py={10}
+            py={{
+                base: 6,
+                sm: 6,
+                md: 10,
+                xl: 10
+
+            }}
         >
             <Box
                 maxW={{
@@ -166,6 +172,7 @@ export const Footer = (props) => {
                         xl:'nowrap'
                     }}
                     mb={10}
+                    spacing={0}
                 >
                     <Box
                         w={{
@@ -175,6 +182,15 @@ export const Footer = (props) => {
                             xl : '20vw'
                         }}
                     >
+                        <Heading
+                                mt={4}
+                                fontSize={{
+                                    base: '20px',
+                                    sm: '20px',
+                                    md: '24px'
+                                }}
+                                color={color_base.white}
+                            >Fitur</Heading>
                         {
                             sectionTwoList.map((item, index) => {
                                 return (
@@ -197,6 +213,16 @@ export const Footer = (props) => {
                             xl : '30vw'
                         }}
                     >
+                        <Heading
+                                mt={4}
+                                fontSize={{
+                                    base: '20px',
+                                    sm: '20px',
+                                    md: '24px'
+                                }}
+                                color={color_base.white}
+                            >Layanan Pengguna</Heading>
+
                         {
                             sectionThreeList.map((item, index) => {
                                 return (
@@ -227,7 +253,7 @@ export const Footer = (props) => {
                                     sm: '20px',
                                     md: '24px'
                                 }}
-                            >Reach Us</Heading>
+                            >Hubungi Kami</Heading>
                             <Text
                                 pt={4}
                                 fontSize={['14px', '14px', '16px']}
@@ -272,18 +298,28 @@ export const Footer = (props) => {
                         color={color_base.white}
                     >
                         <Heading
-                            mt={4}
+                            mt={{
+                                base:8,
+                                sm: 8,
+                                md: 4,
+                                xl: 4
+                            }}
                             fontSize={{
                                 base: '20px',
                                 sm: '20px',
                                 md: '24px'
                             }}
-                            >Cari tau berita terbaru
+                            >Cari tau tentang kami
                         </Heading>
 
                             <HStack
                                 mt={6}
-                                justifyContent={'space-between'}
+                                justifyContent={{
+                                    base: 'space-around',
+                                    sm: 'space-around',
+                                    md: 'space-between',
+                                    xl: 'space-between'
+                                }}
                             >
                                 <Box
                                     onClick={(e) => window.open('https://www.instagram.com/favoree_id/', '_blank')}
@@ -329,8 +365,15 @@ export const Footer = (props) => {
                 </HStack>
 
 
-                <Box textAlign={'center'}>
+                <Box textAlign={'center'}
+                >
                     <Text
+                        fontSize={{
+                            base: '13px',
+                            sm: '13px',
+                            md: '16px',
+                            xl: '16px'
+                        }}
                         color={color_base.white}
                     >Copyright @2022 Favoree.id. All rights reserved</Text>
                 </Box>

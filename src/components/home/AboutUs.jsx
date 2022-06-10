@@ -16,6 +16,7 @@ export const AboutUs = () => {
         >
             <Flex
                 my={{
+                    base: '8vh',
                     sm: '8vh',
                     md: '15vh',
                     xl :'15vh'
@@ -32,8 +33,8 @@ export const AboutUs = () => {
                     w={{
                         xl:'auto',
                         md:'auto',
-                        base:'30vh',
-                        sm:'35vh'
+                        sm:'80vw',
+                        base:'80vw'
                     }}
                     alt={'about_us_image'}
                     src={about_us}

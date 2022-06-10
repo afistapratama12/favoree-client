@@ -25,7 +25,7 @@ export const color_hover = {
 export const CustomButton = (props) => {
     const { bgColor, color, m, value, hoverColor, isExternal, url, ...childProps } = props
 
-    const buttonSize = useBreakpointValue(['sm', 'md'], 'w-full', 'w-auto')
+    const buttonSize = useBreakpointValue(['xs', 'md'], 'w-full', 'w-auto')
 
     return (
         <Button
@@ -44,6 +44,8 @@ export const CustomButton = (props) => {
             }}
             size={buttonSize}
             {...childProps}
+
+            minHeight={'32px'}
         >
             {
                 isExternal ? (
@@ -157,10 +159,9 @@ export const Navbar = ({isShowButton}) => {
                     alt={'favoree_logo'}
                     src={favoree_logo}
                     
-                    
                     w={{
-                        base: '22vw',
-                        sm : '22vw',
+                        base: '30vw',
+                        sm : '30vw',
                         md : '150px',
                         xl : '170px'
                     }}

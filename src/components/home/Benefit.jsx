@@ -1,124 +1,68 @@
-import { Box, Flex, Heading, HStack, Image, Text } from "@chakra-ui/react"
-import { color_base } from "../Navbar"
+import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react"
+// import { color_base } from "../Navbar"
 
-import lock from "../../assets/image/redesign/lock.svg"
-import clock from "../../assets/image/redesign/clock.svg"
-import dollar from "../../assets/image/redesign/dollar.svg"
-import { section_heading, text_description } from "../../responsive"
+import lock from "../../assets/image/redesign/new_lock.svg"
+import clock from "../../assets/image/redesign/new_clock.svg"
+import dollar from "../../assets/image/redesign/new_dollar.svg"
+
+import { text_description } from "../../responsive"
 
 const WhyData = [{
     title: 'Aman',
-    description: 'Favoree menjamin keamanan transaksi dengan garansi uang kembali 100%',
+    description: 'Favoree.id menjamin 100% keamanan dengan garansi uang kembali',
     image : lock,
     alt: "lock-icon"
 },{
     title: 'Praktis',
-    description: 'Transaksi dengan Favoree dapat dilakukan dimanapun dan kapanpun',
+    description: 'Konversi dengan Favoree.id dapat dilakukan dimanapun dan kapanpun',
     image : clock,
     alt: "clock-icon"
 }, {
     title: 'Harga Terjangkau',
-    description: 'Favoree menawarkan biaya convert yang terjangkau',
+    description: 'Favoree.id menawarkan biaya convert yang terjangkau',
     image : dollar,
     alt : "dollar-icon"
 }]
 
 export const BenefitItem = ({title, description, image, alt, ...props}) => {
     return (
-        <HStack
-            alignItems={'center'}
+        <Box
             maxW={{
                 base: '100%',
                 sm: '40vw',
-                md: '32%',
-                xl: '32%'
-            }}
-            justifyContent={{
-                base: 'space-between',
-                sm: 'center',
+                md: '33%',
+                xl: '33%'
             }}
             mb={10}
+            align={'center'}
         >
+
+            <Image
+                alt={alt}
+                src={image}
+            />
             <Box
-                bg={color_base.greenblue}
-                borderRadius={'100px'}
-                boxSize={{
-                    xl :'10vh',
-                    md: '10vh',
-                    sm: '7vh',
-                    base: '7vh'
-                }}
                 align={'center'}
-                minW={{
-                    xl :'10vh',
-                    md: '10vh',
-                    sm: '7vh',
-                    base: '7vh'
-                }} 
             >
-
-                {
-                    title === 'Harga Terjangkau' ? (
-                        <Image
-                        pt={{
-                            xl: 5,
-                            md: 5,
-                            sm: 3,
-                            base: 3
-                        }}
-                        alt={alt}
-                        src={image}
-                        w={{
-                            xl: 'auto',
-                            md: 'auto',
-                            sm: '2vh',
-                            base: '2vh'
-                        }}
-                    />
-                    ) : (
-                        <Image
-                        pt={{
-                            xl: 5,
-                            md: 5,
-                            sm: 3,
-                            base: 3
-                        }}
-                        alt={alt}
-                        src={image}
-                        w={{
-                            xl: 'auto',
-                            md: 'auto',
-                            sm: '3vh',
-                            base: '3vh'
-                        }}
-                    />
-
-                    )
-                }
-            </Box>
-
-            <Box
-                pl={{
-                    xl: 4,
-                    md: 4,
-                    sm: 0,
-                    base: 0
-                }}
-                align={'left'}
-            >
-                <Text
+                <Heading
+                    my={{
+                        base: 4,
+                        sm: 4,
+                        md: 6, 
+                        xl :6
+                    }}
                     fontSize={{
                         xl :'2xl',
                         md: '2xl',
                         sm: 'lg',
                         base: 'lg'
                     }}
-                >{title}</Text>
+                >{title}</Heading>
                 <Text
                     fontSize={text_description}
                 >{description}</Text>
             </Box>
-        </HStack>
+        </Box>
     )
 }
 
@@ -147,12 +91,34 @@ export const Benefit = () => {
                 align={'center'}
             >
                 <Heading
-                    fontSize={section_heading}
-                >Transaksi Aman dan Nyaman</Heading>
+                    fontSize={{
+                        base: '24px',
+                        sm: '24px',
+                        md: '25px',
+                        xl: '25px'
+                    }}
+                >Pilihan terbaik untuk konversi saldo mu</Heading>
+
+                <Text
+                    mt={3}
+                    fontSize={{
+                        xl: '18px',
+                        md: '18px',
+                        sm: '16px',
+                        base: '16px',
+                    }}
+                >
+                Jangan khawatir, platform kami menjamin proses konversi saldo sampai ke e-wallet tujuan
+                </Text>
 
                 <Flex
-                    my={10}
-                    justifyContent={'space-around'}
+                    mt={{
+                        base: 10,
+                        sm: 10,
+                        md: 16,
+                        xl: 16
+                    }}
+                    justifyContent={'center'}
                     wrap={'wrap'}
                 >
                     {

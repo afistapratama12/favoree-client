@@ -15,6 +15,53 @@ import ovo from "../../assets/image/redesign/ovo.png"
 import spay from "../../assets/image/redesign/spay.png"
 import { form_url } from "../../credential";
 
+const listLogoWallet = [{
+    src: gopay,
+    width: {
+        base: '30vw',
+        sm: '30vw',
+        md: '25vh',
+        xl: '25vh'
+    }
+}, {
+    src: dana,
+    width: {
+        base: '30vw',
+        sm: '30vw',
+        md: '25vh',
+        xl: '25vh'
+    }
+},{
+    src: ovo,
+    width: {
+        base: '30vw',
+        sm: '30vw',
+        md: '20vh',
+        xl: '20vh'
+    }
+},{
+    src: spay,
+    width: {
+        base: '30vw',
+        sm: '30vw',
+        md: '20vh',
+        xl: '19vh'
+    }
+}]
+
+export const ImageLogo = ({ key, src, width }) => {
+    return (
+        <Box key={key}>
+        <Image
+            src={src}
+            width={width}
+        />
+        </Box>
+    )
+
+}
+
+
 export const Hero = () => {
     const { width } = useWindowDimensions()
     return (
@@ -46,8 +93,8 @@ export const Hero = () => {
                         xl: '20vh'
                     }}
                     flexDirection={{
-                        base: 'column-reverse',
-                        sm: 'column-reverse',
+                        base: 'column',
+                        sm: 'column',
                         md: 'row',
                         xl: 'row'
                     }}
@@ -68,7 +115,7 @@ export const Hero = () => {
                             Convert saldo ewallet
                         </Heading>
                         <Heading
-                            pt={10}
+                            pt={4}
                             fontSize={{
                                 base: '25px',
                                 sm: '30px',
@@ -171,6 +218,7 @@ export const Hero = () => {
 
                     <Box>
                         <Image
+                            pt={10}
                             src={hero}
                         />
                     </Box>
@@ -182,7 +230,7 @@ export const Hero = () => {
             maxW={width < 1200 ? '90vw': '1200px'}
             margin={'auto'} 
             align={'center'}
-            my={'6vh'}
+            my={'10vh'}
         >
             <Heading
                 fontSize={['18px', '20px','25px', '25px']}
@@ -217,205 +265,20 @@ export const Hero = () => {
                         xl: 'nowrap',
                     }}
                 >
-                    <Image
-                        src={gopay}
-                        w={{
-                            base: '30vw',
-                            sm: '30vw',
-                            md: '20vh',
-                            xl: '20vh'
-                        }}
-                    />
-                    <Image
-                        src={dana}
-                        w={{
-                            base: '30vw',
-                            sm: '30vw',
-                            md: '20vh',
-                            xl: '20vh'
-                        }}
-                    />
-                    <Image
-                        src={ovo}
-                        w={{
-                            base: '30vw',
-                            sm: '30vw',
-                            md: '20vh',
-                            xl: '20vh'
-                        }}
-                    />
-                    <Image
-                        src={spay}
-                        w={{
-                            base: '30vw',
-                            sm: '30vw',
-                            md: '20vh',
-                            xl: '19vh'
-                        }}
-                    />
+                    {
+                        listLogoWallet.map((item, index) => {
+                            return (
+                                <ImageLogo
+                                    key={index}
+                                    src={item.src}
+                                    width={item.width}
+                                />
+                            )
+                        })
+                    }
                 </HStack>
             </Box>
         </Box>
         </>
-
-        // <Box
-        //     maxW={{
-        //         xl: '80vw',
-        //         md: '80vw',
-        //         sm: '90vw',
-        //         base: '90vw'
-        //     }}
-        //     margin={'auto'}
-        //     mb={'13vh'}
-        //     mt={'15vh'}
-        // >
-
-        //     <Flex
-        //         w={width_sizing}
-        //         h={{
-        //             base: '65vh',
-        //             sm: '65vh',
-        //             md:'55vh',
-        //             xl: '55vh'
-        //         }}
-
-        //         bgColor={color_base.greenblue}
-        //         borderRadius={{
-        //             xl :'50px',
-        //             md: '50px',
-        //             sm: '30px',
-        //             base: '30px'
-        //         }}
-        //         align={{
-        //             base: 'center',
-        //             md: 'flex-start'
-
-        //         }}
-        //         flexDirection={{
-        //             base: "column-reverse",
-        //             sm: "column-reverse",
-        //             md: "row",
-        //             xl:'row'
-        //         }}
-        //     >
-        //         <Box
-        //             h={'40vh'}
-        //             pr={'8vw'}
-        //             p={'4vw'}
-        //         >
-        //             <Heading
-        //                 color={color_base.white}
-        //                 fontSize={section_heading}
-        //             >Transfer antar saldo e-wallet di Favoree.id, dijamin aman</Heading>
-        //             <Text
-        //                 fontSize={{
-        //                     xl: '1.2rem',
-        //                     md: '1.2rem',
-        //                     sm: '14px',
-        //                     base: '14px'
-        //                 }}
-        //                 my={6}
-        //                 color={'#F9F9F9'}
-        //             >Favoree.id adalah platform yang membantu melakukan konversi saldo antar e-wallet dengan mudah. Kamu cukup melakukan pengajuan konversi pada platform kami, dan kami menjamin saldo kamu sampai ke ewallet tujuan dengan cepat dan biaya yang sangat murah. Sehingga kamu tidak perlu takut ditipu atau kepotong biaya yang gede.</Text>
-        //             <HStack
-        //                 mt={{
-        //                     xl:'8vh',
-        //                     md: '8vh',
-        //                     sm: '5vh',
-        //                     base: '5vh'
-        //                 }}
-        //                 justifyContent={{
-        //                     base: 'space-around',
-        //                     sm: 'space-around',
-        //                     md: 'flex-start',
-        //                     xl: 'fex-start'
-        //                 }}
-        //             >
-        //                 <CustomButton
-        //                     bgColor={color_base.yellow}
-        //                     hoverColor={color_hover.yellow}
-        //                     m={2}
-        //                     value={'Mulai Convert'}
-        //                     w={{
-        //                         xl: '13vw',
-        //                         md: '13vw',
-        //                         sm: '35vw',
-        //                         base: '35vw'
-        //                     }}
-        //                     h={{
-        //                         base: '6vh',
-        //                         sm: '6vh',
-        //                         md:'7vh',
-        //                         xl: '7vh'
-        //                     }}
-        //                     isExternal={true}
-        //                     url={form_url}
-        //                 />
-        //                 <Box
-        //                     pl={{
-        //                         base: 0,
-        //                         sm: 0,
-        //                         md: 3,
-        //                         xl: 3
-        //                     }}
-        //                 >
-        //                     <Button
-        //                         bgColor={'transparent'}
-        //                         border={'2px solid #FCFCFC'}
-        //                         borderRadius={'100px'}
-        //                         _active={{
-        //                             backgroundColor: 'transparent'
-        //                         }}
-        //                         size={buttonSize}
-        //                         w={{
-        //                             xl: '13vw',
-        //                             md: '13vw',
-        //                             sm: '35vw',
-        //                             base: '35vw'
-        //                         }}
-        //                         h={{
-        //                             base: '6vh',
-        //                             sm: '6vh',
-        //                             md:'7vh',
-        //                             xl: '7vh'
-        //                         }}
-        //                     >
-        //                             <ScrollTo
-        //                             selector={'#cara-kerja'} scrollOptions={{
-        //                                 duration: 1000,
-        //                                 delay: 100,
-        //                                 smooth: true,
-        //                                 offset: -100,
-        //                                 block: "center",
-        //                                 inline: 'center'
-        //                             }}
-        //                             >
-        //                                 <Text
-        //                                     color={color_base.white}
-        //                                     fontWeight={'bold'}
-        //                                     fontSize={text_description}
-        //                                 >
-        //                                     Lihat Cara Kerja
-        //                                 </Text>
-        //                             </ScrollTo>
-        //                     </Button>
-        //                 </Box>
-        //             </HStack>
-        //         </Box>
-
-
-        //         <Image
-        //             alt={'hero_image'}
-        //             src={hero}
-        //             w={{
-        //                 xl:'60vh',
-        //                 md:'55vh',
-        //                 base:'30vh',
-        //                 sm:'35vh'
-        //             }}
-        //         />
-
-        //     </Flex>
-        // </Box>
     )
 }

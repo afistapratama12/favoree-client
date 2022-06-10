@@ -2,14 +2,7 @@ import lock from "../assets/image/redesign/new_lock.svg"
 import clock from "../assets/image/redesign/new_clock.svg"
 import dollar from "../assets/image/redesign/new_dollar.svg"
 
-interface BenefitItemProps {
-    title: string;
-    description: string;
-    image: string;
-    alt: string;
-}
-
-export const BenefitData: Array<BenefitItemProps> = [{
+export const BenefitData = [{
     title: 'Aman',
     description: 'Favoree.id menjamin 100% keamanan dengan garansi uang kembali',
     image : lock,

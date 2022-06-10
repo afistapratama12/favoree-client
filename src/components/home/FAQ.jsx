@@ -3,7 +3,7 @@ import { Box, Heading, HStack, Image} from "@chakra-ui/react"
 import faq from "../../assets/image/redesign/faq.svg"
 import { section_heading } from "../../responsive"
 
-import { questionItems } from "../../source/faq.ts"
+import { questionItems } from "../../source/faq"
 import { FAQItem } from "../FAQ/faqItem"
 
 export const FAQ = () => {

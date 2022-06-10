@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react"
 
-import { BenefitData } from "../../source/benefit.ts"
+import { BenefitData } from "../../source/benefit"
 
 import { BenefitItem } from "../benefit/BenefitItem"
 

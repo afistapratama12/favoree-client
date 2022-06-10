@@ -1,9 +1,4 @@
-interface FAQItemProps {
-    question: string;
-    answer: string;
-}
-
-export const questionItems: Array<FAQItemProps> = [{
+export const questionItems = [{
     question : "Bagaimana cara transaksi dengan Favoree ?",
     answer: 'Cukup klik tombol "Mulai Convert" di halaman beranda, lalu masukkan nomor e-wallet kamu, masukkan nomor e-wallet tujuan dan bukti pengiriman pada nomor e-wallet Favoree. Jika sudah, klik tombol kirim dan kamu akan menerima konfirmasi transaksi melalui WhatsApp!'
 },{

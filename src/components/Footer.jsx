@@ -4,7 +4,7 @@ import favoree_logo from '../assets/image/redesign/logo_favoree_white.png'
 import { contact_number } from "../credential"
 import { color_base } from "./Navbar"
 
-import { socialFooterList, sectionTwoList,sectionThreeList } from "../source/footer.ts";
+import { socialFooterList, sectionTwoList,sectionThreeList } from "../source/footer";
 import { FooterSocialItem } from "./footer/FooterSocialItem";
 import { FooterItemSection } from "./footer/FooterItemSection";
 

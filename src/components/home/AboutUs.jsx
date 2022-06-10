@@ -46,6 +46,7 @@ export const AboutUs = () => {
                     <Heading
                         align={'center'}
                         fontSize={section_heading}
+                        fontWeight={'semibold'}
                     >Tentang kami</Heading>
                     <Box
                         my={'5vh'}

@@ -233,6 +233,7 @@ export const CaraKerja = () => {
             >
                 <Heading
                     fontSize={section_heading}
+                    fontWeight={'semibold'}
                 >Cara Kerja</Heading>
             </Box>
 

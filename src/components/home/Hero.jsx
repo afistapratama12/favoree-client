@@ -116,6 +116,7 @@ export const Hero = () => {
                         </Heading>
                         <Heading
                             pt={4}
+                            fontWeight={'semibold'}
                             fontSize={{
                                 base: '25px',
                                 sm: '30px',
@@ -191,11 +192,9 @@ export const Hero = () => {
                                     md: 'auto',
                                     xl: 'auto'
                                 }}
+                                bg={'transparent'}
                                 _hover={{
-                                    bg: 'gray.100'
-                                }}
-                                _active={{
-                                    bg: 'gray.100'
+                                    bg: 'gray.100',
                                 }}
                             >
                                 <ScrollTo

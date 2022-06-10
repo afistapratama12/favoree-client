@@ -163,6 +163,7 @@ export const Testimoni = () => {
             >
                 <Heading
                     fontSize={section_heading}
+                    fontWeight={'semibold'}
                 >Kata Mereka</Heading>
                 {
                     width > 768 && (

@@ -28,6 +28,7 @@ export const FAQ = () => {
             >
                 <Heading
                     fontSize={section_heading}
+                    fontWeight={'semibold'}
                 >Pertanyaan Seputar Favoree.id</Heading>
 
                 <HStack

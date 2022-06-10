@@ -1,11 +1,13 @@
 import { extendTheme } from '@chakra-ui/react'
 
 import "@fontsource/poppins/700.css"
+import "@fontsource/poppins/600.css"
 import "@fontsource/poppins/500.css"
 import "@fontsource/poppins/400.css"
 
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
 import "@fontsource/inter/700.css";
 
 const config = {
@@ -27,6 +29,7 @@ const theme = extendTheme({
             fontWeight: {
                 normal: 400,
                 medium: 500,
+                semibold: 600,
                 bold: 700,
             }
         },
@@ -35,6 +38,7 @@ const theme = extendTheme({
             fontWeight: {
                 normal: 400,
                 medium: 500,
+                semibold: 600,
                 bold: 700,
             }
         }

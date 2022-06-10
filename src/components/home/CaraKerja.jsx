@@ -62,12 +62,7 @@ const marginTextResponsive = (numb) => {
                 base: '3vh'
             }
         case '4':            
-            return {
-                xl: '3vh',
-                md: '3vh',
-                sm: '1vh',
-                base: '1vh'
-            }
+            return '3vh'
         case '5':            
             return {
                 xl: '3vh',
@@ -84,7 +79,7 @@ const imageResize = (numb) => {
     switch (numb) {
         case "1":
             return {
-                base: '23vh',
+                base: '24vh',
                 sm: '32vh',
                 md: 'auto',
                 xl:'auto'
@@ -98,14 +93,14 @@ const imageResize = (numb) => {
             }
         case "3":
             return {
-                base: '24vh',
+                base: '23vh',
                 sm: '29vh',
                 md: 'auto',
                 xl:'auto'
             }
         case "4":
             return {
-                base: '18vh',
+                base: '19vh',
                 sm: '24vh',
                 md: 'auto',
                 xl:'auto'
@@ -128,7 +123,7 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
             base: '45%',
             sm: '45%',
             md: '25%',
-            xl: '20%'
+            xl: '18%'
         }}
             pb={{
                 base: 6,
@@ -143,6 +138,12 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
                 src={imageSrc}
             />
             <HStack
+                pl={{
+                    xl: 8,
+                    md: 'auto',
+                    sm: 'auto',
+                    base: 'auto'
+                }}
                 w={{
                     base: '100%',
                     sm: '100%',
@@ -179,7 +180,7 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
                     >
                         <Text 
                             pt={{
-                                base: 1,
+                                base: 0,
                                 sm: 0,
                                 md :2,
                                 xl :2

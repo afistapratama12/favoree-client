@@ -17,6 +17,7 @@ export const FloatingWA = () => {
             allowEsc={true}
             avatar={avatar_wa}
             statusMessage={'Online'}
+            //notificationDelay={1000}
         />
     )
 }

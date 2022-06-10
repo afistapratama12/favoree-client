@@ -1,16 +1,46 @@
 import { extendTheme } from '@chakra-ui/react'
-import "@fontsource/quicksand/600.css"
 
+import "@fontsource/poppins/700.css"
+import "@fontsource/poppins/500.css"
+import "@fontsource/poppins/400.css"
+
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/700.css";
 
 const config = {
     initialColorMode: 'light',
     useSystemColorMode: false,
-  }
+}
 
-const theme = extendTheme({ fonts: {
-    heading: 'Quicksand',
-    body: 'Quicksand',
-}, config})
+const theme = extendTheme({ 
+    fonts: {
+        heading: 'Poppins',
+        body: 'Inter',
+    },
+    components: {
+        Button: {
+            fontFamily: 'Inter',
+        },
+        heading: {
+            fontFamily: 'Poppins',
+            fontWeight: {
+                normal: 400,
+                medium: 500,
+                bold: 700,
+            }
+        },
+        Text: {
+            fontFamily: 'Inter',
+            fontWeight: {
+                normal: 400,
+                medium: 500,
+                bold: 700,
+            }
+        }
+    }   
+
+, config})
 
 
 const colorPallet = {

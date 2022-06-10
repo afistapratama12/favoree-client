@@ -5,13 +5,21 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
+import { QueryClient, QueryClientProvider } from 'react-query'
+// import { ReactQueryDevtools } from 'react-query/devtools'
+
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 
+const queryClient = new QueryClient()
+
 root.render(
   <StrictMode >
+    <QueryClientProvider client={queryClient}>
       <ColorModeScript initialColorMode="light"/>
       <App id="app"/>
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+    </QueryClientProvider>
   </StrictMode>
 );
 

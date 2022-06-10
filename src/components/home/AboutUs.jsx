@@ -52,7 +52,16 @@ export const AboutUs = () => {
                     >
                         <Text
                             fontSize={text_description}
-                        >Platform pertama di Indonesia yang menawarkan layanan convert saldo e-wallet dengan praktis dan aman. kamu bisa melakukan convert ewallet apapun dengan aman mulai dari Gopay, Shopeepay, OVO dan Dana. Mulai transaksi dengan kami dan nikmat pengalaman transaksi yang lebih aman, praktis dan terjangkau.</Text>
+                        >
+                            Platform pertama di Indonesia yang menawarkan 
+                            layanan convert saldo e-wallet dengan praktis dan aman.
+                            kamu bisa melakukan convert ewallet apapun dengan aman mulai 
+                            dari <Text 
+                                as={'span'}
+                                fontWeight={'bold'}
+                                >Gopay, Shopeepay, OVO dan Dana</Text>. Mulai transaksi dengan 
+                            kami dan nikmat pengalaman transaksi yang lebih aman, 
+                            praktis dan terjangkau.</Text>
                     </Box>
                 </Box>
             </Flex>

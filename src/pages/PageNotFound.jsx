@@ -2,8 +2,8 @@ import { Box, Button, Heading, Image, Text, useBreakpointValue } from "@chakra-u
 
 import  { useHistory} from 'react-router-dom'
 
-import not_found from "../assets/image/not_found.png"
-import { colorPallet } from "../theme"
+import not_found from "../assets/image/redesign/404.svg"
+import { color_base, color_hover } from "../components/Navbar"
 
 const PageNotFound = () => {
     const history = useHistory()
@@ -12,7 +12,7 @@ const PageNotFound = () => {
 
     return (
         <>
-            <Box maxW={'7xl'} margin={'auto'} px={8} minH={'100vh'} >
+            <Box maxW={'80vw'} margin={'auto'} px={8} minH={'100vh'} >
                 <Box 
                     display={'relative'}
                     alignItems={'center'}
@@ -28,13 +28,13 @@ const PageNotFound = () => {
                     <Image src={not_found} maxW={{
                         base: '90%',
                         sm: "85%",
-                        md: '50%',
-                        xl : "50%"
+                        md: '40%',
+                        xl : "25%"
                     }}/>
                     
                     <Box my={3}>
                     <Heading
-                        fontSize={'80px'}
+                        fontSize={'40px'}
                     >404</Heading>
                     
                     <Text
@@ -44,7 +44,7 @@ const PageNotFound = () => {
                             md: 2,
                             xl: 2
                         }}
-                    >OOOS! PAGE NOT BE FOUND</Text>
+                    >OOPS! PAGE NOT BE FOUND</Text>
                     <Text
                         my={{
                             base: 4,
@@ -55,14 +55,14 @@ const PageNotFound = () => {
                     >Sorry but the page you are looking for does not exist, have been removed. name changed or is temporarily unavailable</Text>
                         <Button
                             h={10}
-                            bg={colorPallet.blue_four}
+                            bg={color_base.greenblue}
                             color={'white'}
                             borderRadius={'100px'}
                             _hover={{
-                                bg: '#0A42C1'
+                                bg: color_hover.greenblue
                             }}
                             _active={{
-                                bg: '#4679EE'
+                                bg: color_base.greenblue
                             }}
                             size={buttonSize}
                             onClick={e => history.push('/')}

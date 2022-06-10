@@ -3,7 +3,6 @@ import { Box, Flex, Heading, HStack, Image, Link, Text, VStack } from "@chakra-u
 
 import ck1 from "../../assets/image/redesign/cara_kerja_1.svg"
 import ck2 from "../../assets/image/redesign/cara_kerja_2.svg"
-import ck3 from "../../assets/image/redesign/cara_kerja_3.svg"
 import ck4 from "../../assets/image/redesign/cara_kerja_4.svg"
 import ck5 from "../../assets/image/redesign/cara_kerja_5.svg"
 import ck6 from "../../assets/image/redesign/cara_kerja_6.svg"
@@ -23,21 +22,16 @@ const itemList = [{
     alt: 'payment'
 },{
     number: "3",
-    name: 'Upload Bukti Pembayaran',
-    imageSrc: ck3,
-    alt: 'upload-payment'
-},{
-    number: "4",
     name: 'Menunggu Proses',
     imageSrc: ck4,
     alt: 'relax'
 },{
-    number: "5",
-    name: 'Uang diterima dan menerima pesan konfirmasi',
+    number: "4",
+    name: 'Saldo diterima',
     imageSrc: ck5,
     alt: 'success'
 },{
-    number: "6",
+    number: "5",
     name: 'Selesai',
     imageSrc: ck6,
     alt: 'done'
@@ -62,26 +56,19 @@ const marginTextResponsive = (numb) => {
             }
         case '3':            
             return {
-                xl: '3vh',
-                md: '3vh',
-                sm: '2vh',
-                base: '2vh'
-            }
-        case '4':            
-            return {
                 xl: '5vh',
                 md: '5vh',
                 sm: '5vh',
                 base: '3vh'
             }
-        case '5':            
+        case '4':            
             return {
                 xl: '3vh',
                 md: '3vh',
                 sm: '1vh',
                 base: '1vh'
             }
-        case '6':            
+        case '5':            
             return {
                 xl: '3vh',
                 md: '3vh',
@@ -111,26 +98,19 @@ const imageResize = (numb) => {
             }
         case "3":
             return {
-                base: '19vh',
-                sm: '25vh',
-                md: 'auto',
-                xl:'auto'
-            }
-        case "4":
-            return {
                 base: '24vh',
                 sm: '29vh',
                 md: 'auto',
                 xl:'auto'
             }
-        case "5":
+        case "4":
             return {
                 base: '18vh',
                 sm: '24vh',
                 md: 'auto',
                 xl:'auto'
             }
-        case "6":
+        case "5":
             return {
                 base: '21vh',
                 sm: '27vh',
@@ -148,7 +128,7 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
             base: '45%',
             sm: '45%',
             md: '25%',
-            xl: '25%'
+            xl: '20%'
         }}
             pb={{
                 base: 6,
@@ -157,11 +137,11 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
                 xl:10
             }}
         >
-                    <Image
-                    maxW={imageResize(numb)}
-                    alt={alt}
-                    src={imageSrc}
-                />
+            <Image
+                maxW={imageResize(numb)}
+                alt={alt}
+                src={imageSrc}
+            />
             <HStack
                 w={{
                     base: '100%',
@@ -199,7 +179,7 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
                     >
                         <Text 
                             pt={{
-                                base: 0,
+                                base: 1,
                                 sm: 0,
                                 md :2,
                                 xl :2
@@ -214,7 +194,8 @@ export const CaraKerjaItem = ({ idx, numb, name, imageSrc, alt}) => {
 
 
                     </Box>
-                    <Box w={'75%'}>
+                    <Box w={'75%'}
+                    >
                         {
                             numb === '1' ? (
                                 <Text

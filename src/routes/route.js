@@ -1,7 +1,13 @@
 export const path = {
     home: '/',
     termAndCondition: '/term-and-condition',
-    // pageNotFound: '/404',
-    redesignHomepage: '/redesign-homepage',
+
+    loginWriter: '/login-writer',
+    blogDashboard : "/user/blog-dashboard",
+    blogEdit : "/blog/edit/:id",
+    blogPreview : "/blog/preview/:id",
+
+    blog : "/blog/:slug", // preview for free users
+
     any: '*'
 }

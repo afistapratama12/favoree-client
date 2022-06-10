@@ -8,7 +8,7 @@ import { section_heading, text_description } from "../../responsive"
 
 const WhyData = [{
     title: 'Aman',
-    description: 'Favoree menjamin keamanan transaksi dengan menjamin garansi uang kembali 100%',
+    description: 'Favoree menjamin keamanan transaksi dengan garansi uang kembali 100%',
     image : lock,
     alt: "lock-icon"
 },{

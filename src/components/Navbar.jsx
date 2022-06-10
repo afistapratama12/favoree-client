@@ -9,6 +9,7 @@ import { form_url, laporkan_kendala } from "../credential";
 
 export const color_base = {
     greenblue: '#43919B',
+    greenlight: '#BAE1E5',
     yellow: '#FAC213',
     white: '#FCFCFC',
     blue: '#0AA1DD',
@@ -17,6 +18,7 @@ export const color_base = {
 
 export const color_hover = {
     greenblue: '#237883',
+    greenlight: '#99D9E1',
     yellow: '#EDB300',
 }
 
@@ -28,7 +30,7 @@ export const CustomButton = (props) => {
     return (
         <Button
             bgColor={bgColor}
-            borderRadius={'100px'}
+            borderRadius={'10px'}
             _hover={{
                 backgroundColor: hoverColor
             }}
@@ -48,7 +50,7 @@ export const CustomButton = (props) => {
                 <Text
                     color={color || 'black'}
                     m={m}
-                    fontWeight={'bold'}
+                    fontWeight={'normal'}
                     fontSize={{
                         xl: '16px',
                         md: '16px',
@@ -96,6 +98,7 @@ export const Navbar = ({isShowButton}) => {
     const history = useHistory()
 
     const [stickyClass, setStickyClass] = useState({
+        bg: 'transparent',
         zIndex: '10'
     })
 
@@ -106,10 +109,11 @@ export const Navbar = ({isShowButton}) => {
     const stickyNavbar = () => {
         if (window !== undefined) {
             let windowHeight = window.scrollY
-            windowHeight > 0 ? setStickyClass({
+            windowHeight > 15 ? setStickyClass({
                 boxShadow: 'lg',
                 zIndex: '10',
             }) : setStickyClass({
+                bg: 'transparent',
                 zIndex: '10'
             })
         }
@@ -186,8 +190,8 @@ export const Navbar = ({isShowButton}) => {
                             />
                             </Box> 
                             <CustomButton
-                                bgColor={color_base.yellow}
-                                hoverColor={color_hover.yellow}
+                                bgColor={color_base.greenlight}
+                                hoverColor={color_hover.greenlight}
                                 m={1}
                                 value={'Ajukan Kendala'}
                                 isExternal={true}

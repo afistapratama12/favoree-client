@@ -136,6 +136,27 @@ export const Footer = (props) => {
                 }}
                 margin={'auto'}
             >
+
+                <Box
+                    w={{
+                        base: '90%',
+                        sm: '90%',
+                        md: '20vw',
+                        xl : '20vw'
+                    }}
+                    mb={6}
+                >
+                    <Image
+                        w={{
+                            base: '200px',
+                            sm : '250px',
+                            md : '250px',
+                            xl : '250px'
+                        }}
+                        alt={'favoree_logo'}
+                        src={favoree_logo}
+                    />
+                </Box>
                 <HStack
                     align={'top'}
                     wrap={{
@@ -146,26 +167,6 @@ export const Footer = (props) => {
                     }}
                     mb={10}
                 >
-                    <Box
-                        w={{
-                            base: '90%',
-                            sm: '90%',
-                            md: '20vw',
-                            xl : '20vw'
-                        }}
-                        mb={6}
-                    >
-                        <Image
-                            w={{
-                                base: '22vw',
-                                sm : '22vw',
-                                md : '150px',
-                                xl : '180px'
-                            }}
-                            alt={'favoree_logo'}
-                            src={favoree_logo}
-                        />
-                    </Box>
                     <Box
                         w={{
                             base: '100%',
@@ -224,7 +225,7 @@ export const Footer = (props) => {
                                 fontSize={{
                                     base: '20px',
                                     sm: '20px',
-                                    md: '28px'
+                                    md: '24px'
                                 }}
                             >Reach Us</Heading>
                             <Text
@@ -260,6 +261,25 @@ export const Footer = (props) => {
                                     xl: '16px'
                                 }}
                             >09.00 - 22.00 WIB</Text>
+                    </Box>
+                    <Box
+                        w={{
+                            base: '100%',
+                            sm: '100%',
+                            md: '30vw',
+                            xl : '30vw'
+                        }}
+                        color={color_base.white}
+                    >
+                        <Heading
+                            mt={4}
+                            fontSize={{
+                                base: '20px',
+                                sm: '20px',
+                                md: '24px'
+                            }}
+                            >Cari tau berita terbaru
+                        </Heading>
 
                             <HStack
                                 mt={6}
@@ -269,19 +289,40 @@ export const Footer = (props) => {
                                     onClick={(e) => window.open('https://www.instagram.com/favoree_id/', '_blank')}
                                     cursor={'pointer'}
                                 >
-                                    <Image src={twitter} alt={'twitter-icon'}/>
+                                    <Image src={twitter} alt={'twitter-icon'}
+                                        w={{
+                                            base: '50px',
+                                            sm: '50px',
+                                            md: '4vw',
+                                            xl: '4vw'
+                                        }}
+                                    />
                                 </Box>
                                 <Box
                                     onClick={(e) => window.open('https://www.instagram.com/favoree.id/', '_blank')}
                                     cursor={'pointer'}
                                 >
-                                    <Image src={instagram} alt={'instagram-icon'}/>
+                                    <Image 
+                                        w={{
+                                            base: '50px',
+                                            sm: '50px',
+                                            md: '4vw',
+                                            xl: '4vw'
+                                        }}
+                                    src={instagram} alt={'instagram-icon'}/>
                                 </Box>
                                 <Box
                                     onClick={(e) => window.open('https://www.facebook.com/favoree.id/', '_blank')}
                                     cursor={'pointer'}
                                 >
-                                    <Image src={facebook} alt={'facebook-icon'}/>
+                                    <Image 
+                                        w={{
+                                            base: '50px',
+                                            sm: '50px',
+                                            md: '4vw',
+                                            xl: '4vw'
+                                        }}
+                                    src={facebook} alt={'facebook-icon'}/>
                                 </Box>
                             </HStack>
                     </Box>

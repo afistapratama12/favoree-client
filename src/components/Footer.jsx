@@ -1,127 +1,14 @@
 import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react"
 
 import favoree_logo from '../assets/image/redesign/logo_favoree_white.png'
-import { contact_number, hubungi_admin, laporkan_kendala } from "../credential"
+import { contact_number } from "../credential"
 import { color_base } from "./Navbar"
 
-import ScrollTo from "react-scroll-into-view";
-import  { useHistory } from  'react-router-dom'
+import { socialFooterList, sectionTwoList,sectionThreeList } from "../source/footer.ts";
+import { FooterSocialItem } from "./footer/FooterSocialItem";
+import { FooterItemSection } from "./footer/FooterItemSection";
 
-import twitter from  "../assets/image/redesign/tw.svg"
-import instagram from  "../assets/image/redesign/ig.svg"
-import facebook from  "../assets/image/redesign/fb.svg"
-
-const sectionTwoList = [{
-    title: 'Benefit',
-    is_internal : true,
-    is_on_page : true,
-    url : `#benefit`
-}, {
-    title: 'About Us',
-    is_internal : true,
-    is_on_page : true,
-    url : `#about_us`
-}, {
-    title: 'Cara Kerja',
-    is_internal : true,
-    is_on_page : true,
-    url : `#cara_kerja`
-}, {
-    title: 'Testimoni',
-    is_internal : true,
-    is_on_page : true,
-    url : `#testimoni`
-}, {
-    title: 'FAQ',
-    is_internal : true,
-    is_on_page : true,
-    url : `#faq`
-}]
-
-
-const sectionThreeList = [{
-    title : "Laporkan Kendala",
-    is_internal : false,
-    is_on_page : false,
-    url : laporkan_kendala
-}, {
-    title : "Hubungi Admin",
-    is_internal : false,
-    is_on_page : false,
-    url : hubungi_admin
-}, {
-    title : "Syarat dan Ketentuan",
-    is_internal: true,
-    is_on_page : false,
-    url: `/term-and-condition`
-}]
-
-export const FooterSectionItem = (props) => {
-    const history = useHistory()
-    
-    const { title, url, is_internal, is_on_page } = props
-
-    const redirectToExternalUrl = (e, url) => {
-        e.preventDefault()
-        window.open(url, "_blank")
-    }
-
-    const changePage = (e, path) => {
-        e.preventDefault()
-        
-        history.push(path)
-    }
-
-    return (
-        <Box
-            color={color_base.white}
-            my={3}
-            fontSize={{
-                base: '13px',
-                sm: '14px',
-                md: '16px',
-                xl: '16px'
-            }}
-        >
-            {
-                !is_internal ? (
-                    <Text
-                        onClick={(e) => redirectToExternalUrl(e, url)}
-
-                    _hover={{
-                        textDecoration: 'underline'
-                            }}
-                        cursor={'pointer'}
-                    >{title}</Text>
-                ) : is_on_page ? (<ScrollTo selector={url} scrollOptions={{
-                    duration: 1000,
-                    delay: 100,
-                    smooth: true,
-                    offset: -100,
-                    block: "center",
-                    inline: 'center'
-                }}>
-                    <Text
-                        _hover={{
-                            textDecoration: 'underline'
-                        }}
-                        cursor={'pointer'}
-                    >{title}</Text>
-                </ScrollTo>) : (
-                    <Text
-                     _hover={{
-                         textDecoration: 'underline'
-                     }}
-                     cursor={'pointer'}
-                     onClick={(e) => changePage(e, url)}
-                 >{title}</Text>
-                )
-            }
-        </Box>
-    )
-}
-
-export const Footer = (props) => {
+export const Footer = () => {
     return (
         <Box
             bgColor={'#003E66'}
@@ -192,9 +79,9 @@ export const Footer = (props) => {
                                 color={color_base.white}
                             >Fitur</Heading>
                         {
-                            sectionTwoList.map((item, index) => {
+                            sectionTwoList && sectionTwoList.map((item, index) => {
                                 return (
-                                    <FooterSectionItem
+                                    <FooterItemSection
                                         key={index}
                                         title={item.title}
                                         url={item.url}
@@ -224,9 +111,9 @@ export const Footer = (props) => {
                             >Layanan Pengguna</Heading>
 
                         {
-                            sectionThreeList.map((item, index) => {
+                            sectionThreeList && sectionThreeList.map((item, index) => {
                                 return (
-                                    <FooterSectionItem
+                                    <FooterItemSection
                                         key={index}
                                         title={item.title}
                                         url={item.url}
@@ -259,7 +146,7 @@ export const Footer = (props) => {
                                 fontSize={['14px', '14px', '16px']}
                             >Contact Number</Text>
                             
-                            <FooterSectionItem
+                            <FooterItemSection
                                 title={'0857-3665-3576'}
                                 is_internal={false}
                                 url={contact_number}       
@@ -321,45 +208,16 @@ export const Footer = (props) => {
                                     xl: 'space-between'
                                 }}
                             >
-                                <Box
-                                    onClick={(e) => window.open('https://www.instagram.com/favoree_id/', '_blank')}
-                                    cursor={'pointer'}
-                                >
-                                    <Image src={twitter} alt={'twitter-icon'}
-                                        w={{
-                                            base: '50px',
-                                            sm: '50px',
-                                            md: '4vw',
-                                            xl: '4vw'
-                                        }}
-                                    />
-                                </Box>
-                                <Box
-                                    onClick={(e) => window.open('https://www.instagram.com/favoree.id/', '_blank')}
-                                    cursor={'pointer'}
-                                >
-                                    <Image 
-                                        w={{
-                                            base: '50px',
-                                            sm: '50px',
-                                            md: '4vw',
-                                            xl: '4vw'
-                                        }}
-                                    src={instagram} alt={'instagram-icon'}/>
-                                </Box>
-                                <Box
-                                    onClick={(e) => window.open('https://www.facebook.com/favoree.id/', '_blank')}
-                                    cursor={'pointer'}
-                                >
-                                    <Image 
-                                        w={{
-                                            base: '50px',
-                                            sm: '50px',
-                                            md: '4vw',
-                                            xl: '4vw'
-                                        }}
-                                    src={facebook} alt={'facebook-icon'}/>
-                                </Box>
+                                {
+                                    socialFooterList && socialFooterList.map((item, index) => (
+                                        <FooterSocialItem
+                                            key={index}
+                                            src={item.src}
+                                            alt={item.alt}
+                                            link={item.link}
+                                        />
+                                    ))
+                                }
                             </HStack>
                     </Box>
                 </HStack>

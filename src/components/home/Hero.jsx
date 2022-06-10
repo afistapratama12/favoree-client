@@ -185,14 +185,17 @@ export const Hero = () => {
                                 borderRadius={'10px'}
                                 size={'lg'}
                                 border={`1px solid black`}
-                                _hover={{
-                                    bg: 'gray.100'
-                                }}
                                 width={{
                                     base: '90vw',
                                     sm: '90vw',
                                     md: 'auto',
                                     xl: 'auto'
+                                }}
+                                _hover={{
+                                    bg: 'gray.100'
+                                }}
+                                _active={{
+                                    bg: 'gray.100'
                                 }}
                             >
                                 <ScrollTo

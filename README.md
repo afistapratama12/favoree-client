@@ -66,3 +66,19 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### Structure code
+- Assets
+  - Image (png, jpeg, etc)
+  - vector (svg)
+  - icon (.ico)
+
+Components
+  - component per layout / section
+
+Source
+
+Store all static data needed to this folder
+
+

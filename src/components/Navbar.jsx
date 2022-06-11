@@ -160,8 +160,8 @@ export const Navbar = ({isShowButton}) => {
                     src={favoree_logo}
                     
                     w={{
-                        base: '30vw',
-                        sm : '30vw',
+                        base: '32vw',
+                        sm : '32vw',
                         md : '150px',
                         xl : '170px'
                     }}

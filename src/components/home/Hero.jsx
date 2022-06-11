@@ -2,7 +2,6 @@ import { Box, Button, Heading, HStack, Image, Text } from "@chakra-ui/react"
 import { color_base, color_hover } from "../Navbar"
 
 import hero from "../../assets/image/redesign/hero.svg"
-// import { section_heading, text_description, width_sizing } from "../../responsive"
 
 import useWindowDimensions from "../../useWindowDimension";
 
@@ -137,7 +136,9 @@ export const Hero = () => {
                             }}
                             fontWeight={'normal'}
                         >
-                        Favoree.id adalah platform yang membantu melakukan konversi saldo antar e-wallet dengan mudah. Kamu cukup melakukan pengajuan konversi pada platform kami, dan kami menjamin saldo kamu sampai ke ewallet tujuan dengan cepat dan biaya yang sangat murah. Sehingga kamu tidak perlu takut ditipu atau kepotong biaya yang gede
+                        Favoree.id adalah platform pertama di Indonesia yang membantu konversi saldo antar e-wallet dengan mudah. 
+                        Kamu cukup melakukan pengajuan konversi pada platform kami, dan kami menjamin saldo kamu sampai ke ewallet tujuan dengan cepat dan biaya yang sangat murah. 
+                        Sehingga kamu tidak perlu takut ditipu atau kepotong biaya gede
                         </Text>
 
                         <HStack
@@ -182,22 +183,8 @@ export const Hero = () => {
                                 Yuk Mulai
                                 </Text>
                             </Button>
-                            <Button
-                                borderRadius={'10px'}
-                                size={'lg'}
-                                border={`1px solid black`}
-                                width={{
-                                    base: '90vw',
-                                    sm: '90vw',
-                                    md: 'auto',
-                                    xl: 'auto'
-                                }}
-                                bg={'transparent'}
-                                _hover={{
-                                    bg: 'gray.100',
-                                }}
-                            >
-                                <ScrollTo
+
+                            <ScrollTo
                                     selector={'#cara-kerja'} scrollOptions={{
                                         duration: 1000,
                                         delay: 100,
@@ -207,14 +194,29 @@ export const Hero = () => {
                                         inline: 'center'
                                     }}
                                 >
+                                <Button
+                                    borderRadius={'10px'}
+                                    size={'lg'}
+                                    border={`1px solid black`}
+                                    width={{
+                                        base: '90vw',
+                                        sm: '90vw',
+                                        md: 'auto',
+                                        xl: 'auto'
+                                    }}
+                                    bg={'transparent'}
+                                    _hover={{
+                                        bg: 'gray.100',
+                                    }}
+                                >
                                     <Text
                                         fontWeight={'medium'}
                                         fontSize={'16px'}
                                     >
                                         Lihat Cara Kerja
                                     </Text>
-                                </ScrollTo>
-                            </Button>
+                                </Button>
+                            </ScrollTo>
                         </HStack>
                     </Box>
 

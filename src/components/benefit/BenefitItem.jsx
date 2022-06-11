@@ -1,9 +1,10 @@
 import { Box, Heading, Image, Text } from "@chakra-ui/react"
 import { text_description } from "../../responsive"
 
-export const BenefitItem = ({title, description, image, alt, ...props}) => {
+export const BenefitItem = ({idx, title, description, image, alt, ...props}) => {
     return (
         <Box
+            key={idx}
             maxW={{
                 base: '100%',
                 sm: '40vw',

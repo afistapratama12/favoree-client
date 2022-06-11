@@ -123,7 +123,7 @@ export const Hero = () => {
                                 xl:'45px'
                             }}
                         >
-                            Transfer antar saldo e-wallet di Favoree.id, dijamin aman
+                            Transfer saldo antar e-wallet di Favoree.id, dijamin aman
                         </Heading>
                         <Text
                             pt={6}

@@ -1,7 +1,7 @@
 import { Box, Heading, Text } from "@chakra-ui/react"
 import { text_description } from "../../responsive"
 
-export const TestimoniItemMobile = ({title, name , text}) => {
+export const TestimoniItemMobile = ({ title, name , text}) => {
     return (
         <Box
             bgColor={'#E8F9FD'}

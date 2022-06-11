@@ -61,13 +61,14 @@ export const Benefit = () => {
                     {
                         BenefitData && BenefitData.map((item, index) => {
                             return (
-                                <BenefitItem
-                                    key={index}
-                                    title={item.title}
-                                    description={item.description}
-                                    image={item.image}
-                                    alt={item.alt}
-                                />
+                                <Box key={index}>
+                                    <BenefitItem
+                                        title={item.title}
+                                        description={item.description}
+                                        image={item.image}
+                                        alt={item.alt}
+                                        />
+                                </Box>
                             )
                         })
                     }

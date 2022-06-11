@@ -1,9 +1,10 @@
 import { Box, Heading, Text } from "@chakra-ui/react"
 import { text_description } from "../../responsive"
 
-export const TestimoniItem = ({ title, name, text}) => {
+export const TestimoniItem = ({key, title, name, text}) => {
     return (
         <Box
+            key={key}
             bgColor={'#E8F9FD'}
             w={'48%'}
             

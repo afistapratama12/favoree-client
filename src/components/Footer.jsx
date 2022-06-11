@@ -113,13 +113,15 @@ export const Footer = () => {
                         {
                             sectionThreeList && sectionThreeList.map((item, index) => {
                                 return (
-                                    <FooterItemSection
-                                        key={index}
-                                        title={item.title}
-                                        url={item.url}
-                                        is_internal={item.is_internal}
-                                        is_on_page={item.is_on_page}
-                                    />
+                                    <Box key={index}>
+                                        <FooterItemSection
+                                            key={index}
+                                            title={item.title}
+                                            url={item.url}
+                                            is_internal={item.is_internal}
+                                            is_on_page={item.is_on_page}
+                                        />
+                                    </Box>
                                 )
                             })
                         }

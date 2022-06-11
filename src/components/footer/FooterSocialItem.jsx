@@ -1,14 +1,13 @@
 import { Box, Image } from "@chakra-ui/react"
 
 
-export const FooterSocialItem = ({key, src, alt, link}) => {
+export const FooterSocialItem = ({src, alt, link}) => {
     return (
         <Box
-            key={key}
             onClick={() => window.open(link, '_blank')}
             cursor={'pointer'}
         >
-            <Image 
+            <Image
                 w={{
                     base: '50px',
                     sm: '50px',

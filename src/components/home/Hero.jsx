@@ -16,6 +16,7 @@ import { form_url } from "../../credential";
 
 const listLogoWallet = [{
     src: gopay,
+    alt: 'gopay',
     width: {
         base: '30vw',
         sm: '30vw',
@@ -24,6 +25,7 @@ const listLogoWallet = [{
     }
 }, {
     src: dana,
+    alt: 'dana',
     width: {
         base: '30vw',
         sm: '30vw',
@@ -32,6 +34,7 @@ const listLogoWallet = [{
     }
 },{
     src: ovo,
+    alt: 'ovo',
     width: {
         base: '30vw',
         sm: '30vw',
@@ -40,6 +43,7 @@ const listLogoWallet = [{
     }
 },{
     src: spay,
+    alt: 'shopeepay',
     width: {
         base: '30vw',
         sm: '30vw',
@@ -48,13 +52,14 @@ const listLogoWallet = [{
     }
 }]
 
-export const ImageLogo = ({ key, src, width }) => {
+export const ImageLogo = ({ src, alt, width }) => {
     return (
-        <Box key={key}>
-        <Image
-            src={src}
-            width={width}
-        />
+        <Box>
+            <Image
+                src={src}
+                alt={alt}
+                width={width}
+            />
         </Box>
     )
 
@@ -224,6 +229,7 @@ export const Hero = () => {
                         <Image
                             pt={10}
                             src={hero}
+                            alt={'transfer-ewallet'}
                         />
                     </Box>
                 </HStack>
@@ -270,13 +276,15 @@ export const Hero = () => {
                     }}
                 >
                     {
-                        listLogoWallet.map((item, index) => {
+                        listLogoWallet && listLogoWallet.map((item, index) => {
                             return (
-                                <ImageLogo
-                                    key={index}
-                                    src={item.src}
-                                    width={item.width}
-                                />
+                                <Box key={index}>
+                                    <ImageLogo
+                                        src={item.src}
+                                        alt={item.alt}
+                                        width={item.width}
+                                    />
+                                </Box>
                             )
                         })
                     }

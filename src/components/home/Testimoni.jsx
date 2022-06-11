@@ -57,6 +57,7 @@ export const Testimoni = () => {
                                 listTestimoni && listTestimoni.map((item, index) => {
                                     return (    
                                         <TestimoniItem
+                                            key={index}
                                             title={item.title}
                                             name={item.name}
                                             text={item.text}
@@ -80,8 +81,7 @@ export const Testimoni = () => {
                             {
                                 listTestimoni && listTestimoni.map((item, index) => {
                                     return (
-                                        <Box key={index}
-                                        >
+                                        <Box key={index}>
                                             <TestimoniItemMobile
                                                 title={item.title}
                                                 name={item.name}

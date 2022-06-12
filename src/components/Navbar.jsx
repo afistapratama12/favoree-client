@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom"
 import ScrollTo from "react-scroll-into-view";
 
 import favoree_logo from '../assets/image/logo_favoree.png'
-import { form_url, laporkan_kendala } from "../credential";
+import { form_url, hubungi_admin } from "../credential";
 
 export const color_base = {
     greenblue: '#43919B',
@@ -194,9 +194,9 @@ export const Navbar = ({isShowButton}) => {
                                 bgColor={color_base.greenlight}
                                 hoverColor={color_hover.greenlight}
                                 m={1}
-                                value={'Ajukan Kendala'}
+                                value={'Hubungi Kami'}
                                 isExternal={true}
-                                url={laporkan_kendala}
+                                url={hubungi_admin}
                             />
                         </HStack>
                     )

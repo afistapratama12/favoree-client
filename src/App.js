@@ -18,6 +18,7 @@ import { PageNotFound } from './pages/PageNotFound';
 import { path } from './routes/route';
 import ScrollToTop from './ScrollToTop';
 import { HomePage } from './pages/Home';
+import { Blog } from './pages/Blog';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <ScrollToTop>
           <Switch>
               <Route exact path={path.home} component={HomePage}/>
+              <Route exact path={path.blogTest} component={Blog}/>
               <Route exact path={path.termAndCondition} component={TermCondition}/>
               <Route path={path.any} component={PageNotFound}/>
           </Switch>

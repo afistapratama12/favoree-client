@@ -9,5 +9,7 @@ export const path = {
 
     blog : "/blog/:slug", // preview for free users
 
+    blogTest : "/blog/test",
+
     any: '*'
 }

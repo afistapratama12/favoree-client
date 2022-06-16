@@ -1,19 +1,19 @@
 {
-  "short_name": "Platform Convert e-wallet pertama | Favoree",
+  "short_name": "Platform Convert saldo e-wallet | Favoree",
   "name": "Platform pertama di Indonesia yang menawarkan layanan convert saldo e-wallet dengan praktis dan aman.",
   "icons": [
     {
-      "src": "temp_wallet.ico",
+      "src": "favoree.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "temp_wallet.png",
+      "src": "favoree.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "favoree.png",
       "type": "image/png",
       "sizes": "512x512"
     }

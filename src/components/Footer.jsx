@@ -1,6 +1,6 @@
 import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react"
 
-import favoree_logo from '../assets/image/redesign/logo_favoree_white.png'
+import favoree_logo from '../assets/image/logo_favoree_white.png'
 import { contact_number } from "../credential"
 import { color_base } from "./Navbar"
 

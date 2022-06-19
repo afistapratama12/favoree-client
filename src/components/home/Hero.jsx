@@ -62,9 +62,7 @@ export const ImageLogo = ({ src, alt, width }) => {
             />
         </Box>
     )
-
 }
-
 
 export const Hero = () => {
     const { width } = useWindowDimensions()

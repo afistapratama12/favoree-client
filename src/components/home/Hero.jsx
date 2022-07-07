@@ -1,4 +1,4 @@
-import { Box, Button, Heading, HStack, Image, Text } from "@chakra-ui/react"
+import { Box, Button, Heading, HStack, Image, Text, useDisclosure } from "@chakra-ui/react"
 import { color_base, color_hover } from "../Navbar"
 
 import hero from "../../assets/image/redesign/hero.svg"
@@ -12,7 +12,7 @@ import dana from "../../assets/image/redesign/dana.png"
 import gopay from "../../assets/image/redesign/gopay.png"
 import ovo from "../../assets/image/redesign/ovo.png"
 import spay from "../../assets/image/redesign/spay.png"
-import { form_url } from "../../credential";
+import { ModalTransfer } from "../ModalTransfer";
 
 const listLogoWallet = [{
     src: gopay,
@@ -64,10 +64,21 @@ export const ImageLogo = ({ src, alt, width }) => {
     )
 }
 
-export const Hero = () => {
+export const Hero = ({data, setData}) => {
     const { width } = useWindowDimensions()
+
+    const { isOpen, onClose, onOpen} = useDisclosure()
+
     return (
         <>
+
+        <ModalTransfer
+            isOpen={isOpen}
+            onClose={onClose}
+            data={data}
+            setData={setData}
+        />
+
         <Box
             bgImage={width > 768 && bg}
             bg={width < 768 && '#E8F9FD'}
@@ -175,9 +186,7 @@ export const Hero = () => {
                                     md: 'auto',
                                     xl: 'auto'
                                 }}
-                                onClick={() => {
-                                    window.open(form_url, '_blank')
-                                }}
+                                onClick={onOpen}
                             >
                                 <Text
                                     fontWeight={'medium'}

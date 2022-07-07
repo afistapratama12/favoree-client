@@ -15,9 +15,21 @@ import { useEffect } from "react"
 import { Axios } from "../API/axios"
 import { API } from "../API/api"
 import axios from "axios"
+import { useState } from "react"
+
+export const plainData = {
+    sender_number: "",
+    sender_wallet: "",
+    receiver_name: "",
+    receiver_number: "",
+    receiver_wallet: "",
+    amount_transfer: ""
+}
 
 export const HomePage = () => {
     const accessToken = localStorage.getItem("access_token")
+
+    const [dataTransfer, setDataTransfer] = useState(plainData)
 
     useEffect(() => {
         if (!accessToken) {
@@ -74,9 +86,14 @@ export const HomePage = () => {
         <>
         <Navbar
             isShowButton={true}
+            data={dataTransfer}
+            setData={setDataTransfer}
         />
         <Box>
-            <Hero/>
+            <Hero
+                data={dataTransfer}
+                setData={setDataTransfer}
+            />
             <Benefit/>
             <AboutUs/>
             <CaraKerja/>

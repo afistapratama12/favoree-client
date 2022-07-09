@@ -1,15 +1,20 @@
 
 export const API = {
-    non_users: {
-        validate: `/personal_data/validate`,
-        create: `/personal_data`,
-        subscribe: `/personal_data/subscribe`
+    users : {
+        base : "/users",
+        login : `/users/login`,
+        register : `/users/register`,
     },
-    // users: {
-    //     base: `/users`,
-    //     login: `/users/login`,
-    //     register: `/users/register`
-    // },
+    admin : {
+        login :`/users/login`,
+        ip_check : `/users/ip_address/check`,
+    },
+    transactions : {
+        base : `/transactions`,
+        last : `/transactions/last`,
+        confirm_paid : `/confirm_paid`,
+        cancel : `/cancel`,
+    }
     // blogs: {
     //     base: `/blogs`,
     //     blogById: `/blogs/`,

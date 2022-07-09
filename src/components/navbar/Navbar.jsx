@@ -1,69 +1,14 @@
-import { Box, Button, HStack, Image, Text, useBreakpointValue, useDisclosure } from "@chakra-ui/react"
+import { Box, HStack, Image, useDisclosure } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
+
+import { color_base, color_hover} from '../../theme/js'
 
 import favoree_logo from '../assets/image/logo_favoree.png'
 import { hubungi_admin } from "../credential";
 import { ModalTransfer } from "./ModalTransfer";
 
-export const color_base = {
-    greenblue: '#43919B',
-    greenlight: '#BAE1E5',
-    yellow: '#FAC213',
-    white: '#FCFCFC',
-    blue: '#0AA1DD',
-    black: "#000000"
-}
-
-export const color_hover = {
-    greenblue: '#237883',
-    greenlight: '#99D9E1',
-    yellow: '#EDB300',
-}
-
-export const CustomButton = (props) => {
-    const { bgColor, color, m, value, hoverColor, isExternal, url, onOpen,...childProps } = props
-
-    const buttonSize = useBreakpointValue(['xs', 'md'], 'w-full', 'w-auto')
-
-    return (
-        <Button
-            bgColor={bgColor}
-            borderRadius={'10px'}
-            _hover={{
-                backgroundColor: hoverColor
-            }}
-            _active={{
-                backgroundColor: bgColor
-            }}
-            onClick={() => {
-                if (isExternal) {
-                    window.open(url, '_blank')
-                } else {
-                    onOpen()
-                }
-            }}
-            size={buttonSize}
-            {...childProps}
-
-            minHeight={'32px'}
-        >
-            <Text
-                color={color || 'black'}
-                m={m}
-                fontWeight={'normal'}
-                fontSize={{
-                    xl: '16px',
-                    md: '16px',
-                    sm: '14px',
-                    base: '13px',
-                }}
-            >
-                {value}
-            </Text>
-        </Button>
-    )
-}
+import { CustomButton } from '../button/CustomButton'
 
 export const Navbar = ({isShowButton, data, setData}) => {
     const history = useHistory()

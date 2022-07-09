@@ -78,6 +78,21 @@ const theme = extendTheme({
 
 , config})
 
+export const color_base = {
+    greenblue: '#43919B',
+    greenlight: '#BAE1E5',
+    yellow: '#FAC213',
+    white: '#FCFCFC',
+    blue: '#0AA1DD',
+    black: "#000000"
+}
+
+export const color_hover = {
+    greenblue: '#237883',
+    greenlight: '#99D9E1',
+    yellow: '#EDB300',
+}
+
 
 const colorPallet = {
     blue_zero : '#F2FDFF',

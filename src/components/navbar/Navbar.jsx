@@ -1,103 +1,19 @@
-import { Box, Button, HStack, Image, Text, useBreakpointValue } from "@chakra-ui/react"
+import { Box, HStack, Image, useDisclosure } from "@chakra-ui/react"
 import { useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 
-import ScrollTo from "react-scroll-into-view";
+import { color_base, color_hover} from '../../theme/js'
 
 import favoree_logo from '../assets/image/logo_favoree.png'
-import { form_url, hubungi_admin } from "../credential";
+import { hubungi_admin } from "../credential";
+import { ModalTransfer } from "./ModalTransfer";
 
-export const color_base = {
-    greenblue: '#43919B',
-    greenlight: '#BAE1E5',
-    yellow: '#FAC213',
-    white: '#FCFCFC',
-    blue: '#0AA1DD',
-    black: "#000000"
-}
+import { CustomButton } from '../button/CustomButton'
 
-export const color_hover = {
-    greenblue: '#237883',
-    greenlight: '#99D9E1',
-    yellow: '#EDB300',
-}
-
-export const CustomButton = (props) => {
-    const { bgColor, color, m, value, hoverColor, isExternal, url, ...childProps } = props
-
-    const buttonSize = useBreakpointValue(['xs', 'md'], 'w-full', 'w-auto')
-
-    return (
-        <Button
-            bgColor={bgColor}
-            borderRadius={'10px'}
-            _hover={{
-                backgroundColor: hoverColor
-            }}
-            _active={{
-                backgroundColor: bgColor
-            }}
-            onClick={() => {
-                if (isExternal) {
-                    window.open(url, '_blank')
-                }
-            }}
-            size={buttonSize}
-            {...childProps}
-
-            minHeight={'32px'}
-        >
-            {
-                isExternal ? (
-                <Text
-                    color={color || 'black'}
-                    m={m}
-                    fontWeight={'normal'}
-                    fontSize={{
-                        xl: '16px',
-                        md: '16px',
-                        sm: '14px',
-                        base: '13px',
-                    }}
-                >
-                    {value}
-                </Text>
-
-                ) : (
-                <ScrollTo
-                selector={url} scrollOptions={{
-                    duration: 1000,
-                    delay: 100,
-                    smooth: true,
-                    offset: -100,
-                    block: "center",
-                    inline: 'center'
-                }}
-                >
-                    <Text
-                        color={color || 'black'}
-                        m={m}
-                        fontWeight={'bold'}
-                        fontSize={{
-                            xl: '16px',
-                            md: '16px',
-                            sm: '14px',
-                            base: '13px',
-                        }}
-                    >
-                        {value}
-                    </Text>
-                </ScrollTo>
-                )
-            }
-
-
-        </Button>
-    )
-}
-
-export const Navbar = ({isShowButton}) => {
+export const Navbar = ({isShowButton, data, setData}) => {
     const history = useHistory()
+
+    const { isOpen, onOpen, onClose} = useDisclosure()
 
     const [stickyClass, setStickyClass] = useState({
         bg: 'transparent',
@@ -135,6 +51,14 @@ export const Navbar = ({isShowButton}) => {
     }
 
     return (
+        <>
+        <ModalTransfer
+            isOpen={isOpen}
+            onClose={onClose}
+            data={data}
+            setData={setData}
+        />
+
         <Box
             position={'fixed'}
             w={'100vw'}
@@ -186,8 +110,8 @@ export const Navbar = ({isShowButton}) => {
                                     color={color_base.white}
                                     m={1}
                                     value={'Yuk Mulai'}
-                                    isExternal={true}
-                                    url={form_url}
+                                    isExternal={false}
+                                    onOpen={onOpen}
                             />
                             </Box> 
                             <CustomButton
@@ -203,5 +127,6 @@ export const Navbar = ({isShowButton}) => {
                 }
             </HStack>
         </Box>
+        </>
     )
 }

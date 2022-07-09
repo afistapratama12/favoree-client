@@ -15,12 +15,44 @@ const config = {
     useSystemColorMode: false,
 }
 
+const activeLabelStyles = {
+    transform: "scale(0.85) translateY(-24px)"
+};
+
 const theme = extendTheme({ 
     fonts: {
         heading: 'Poppins',
         body: 'Inter',
     },
     components: {
+        Form: {
+            variants: {
+                floating: {
+                    container : {
+                        _focusWithin: {
+                            label: {
+                                ...activeLabelStyles
+                            }
+                        },
+                        "input:not(:placeholder-shown) + label, .chakra-select__wrapper + label": {
+                            ...activeLabelStyles
+                        },
+                        label: {
+                            top: 0,
+                            left: 0,
+                            zIndex: 2,
+                            position: "absolute",
+                            backgroundColor: "white",
+                            pointerEvents: "none",
+                            mx: 3,
+                            px: 1,
+                            my: 2,
+                            transformOrigin: "left top"
+                        }
+                    }
+                }
+            }
+        },
         Button: {
             fontFamily: 'Inter',
         },
@@ -45,6 +77,21 @@ const theme = extendTheme({
     }   
 
 , config})
+
+export const color_base = {
+    greenblue: '#43919B',
+    greenlight: '#BAE1E5',
+    yellow: '#FAC213',
+    white: '#FCFCFC',
+    blue: '#0AA1DD',
+    black: "#000000"
+}
+
+export const color_hover = {
+    greenblue: '#237883',
+    greenlight: '#99D9E1',
+    yellow: '#EDB300',
+}
 
 
 const colorPallet = {

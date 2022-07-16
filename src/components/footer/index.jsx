@@ -175,7 +175,7 @@ export const Footer = () => {
                                     md: '16px',
                                     xl: '16px'
                                 }}
-                            >09.00 - 22.00 WIB</Text>
+                            >08.00 - 21.00 WIB</Text>
                     </Box>
                     <Box
                         w={{

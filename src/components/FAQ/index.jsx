@@ -4,7 +4,7 @@ import faq from "../../assets/image/redesign/faq.svg"
 import { section_heading } from "../../responsive"
 
 import { questionItems } from "../../source/faq"
-import { FAQItem } from "../FAQ/faqItem"
+import { FAQItem } from "./faqItem"
 
 export const FAQ = () => {
     return (

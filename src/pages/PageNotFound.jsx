@@ -3,7 +3,7 @@ import { Box, Button, Heading, Image, Text, useBreakpointValue } from "@chakra-u
 import  { useHistory} from 'react-router-dom'
 
 import not_found from "../assets/image/redesign/404.svg"
-import { color_base, color_hover } from "../components/Navbar"
+import { color_base, color_hover } from "../theme"
 
 const PageNotFound = () => {
     const history = useHistory()

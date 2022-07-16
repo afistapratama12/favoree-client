@@ -1,6 +1,7 @@
 import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react"
-import { color_base, color_hover, CustomButton } from "../Navbar"
+import { color_base, color_hover } from "../../theme"
 
+import { CustomButton } from "../button/CustomButton"
 
 import submit_problem from "../../assets/image/redesign/submit_problem.svg"
 import { text_description } from "../../responsive"

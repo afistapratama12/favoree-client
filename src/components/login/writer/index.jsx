@@ -1,6 +1,6 @@
-import { Box, useQuery } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 
-export const Login = () => {
+export const LoginWriter = () => {
     return (
         <Box>
             Login for writer

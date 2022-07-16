@@ -1,6 +1,6 @@
 import { Box, Heading, ListItem, Text, UnorderedList } from '@chakra-ui/react';
-import { Navbar } from '../components/Navbar';
-import { Footer } from '../components/Footer';
+import { Navbar } from '../components/navbar';
+import { Footer } from '../components/footer';
 import { phone_number } from '../credential';
 import { colorPallet } from '../theme';
 

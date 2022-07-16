@@ -1,5 +1,5 @@
 import { Box, Text } from "@chakra-ui/react"
-import { color_base } from "../Navbar"
+import { color_base } from "../../theme"
 
 import ScrollTo from "react-scroll-into-view";
 

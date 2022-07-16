@@ -1,12 +1,12 @@
 import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react"
 
-import favoree_logo from '../assets/image/logo_favoree_white.png'
-import { contact_number } from "../credential"
-import { color_base } from "./Navbar"
+import favoree_logo from '../../assets/image/logo_favoree_white.png'
+import { contact_number } from "../../credential"
+import { color_base } from "../../theme";
 
-import { socialFooterList, sectionTwoList,sectionThreeList } from "../source/footer";
-import { FooterSocialItem } from "./footer/FooterSocialItem";
-import { FooterItemSection } from "./footer/FooterItemSection";
+import { socialFooterList, sectionTwoList,sectionThreeList } from "../../source/footer";
+import { FooterSocialItem } from "./FooterSocialItem";
+import { FooterItemSection } from "./FooterItemSection";
 
 export const Footer = () => {
     return (
@@ -235,7 +235,7 @@ export const Footer = () => {
                             xl: '16px'
                         }}
                         color={color_base.white}
-                    >Copyright @2022 Favoree.id. All rights reserved</Text>
+                    >© 2022 Favoree.id. All rights reserved. Made with ❤️ in Indonesia.</Text>
                 </Box>
             </Box>
         </Box>

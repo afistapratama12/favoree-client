@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react"
 
-export const Login = () => {
+export const LoginWriter = () => {
     return (
         <Box>
             Login for writer

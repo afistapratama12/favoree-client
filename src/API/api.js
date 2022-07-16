@@ -12,6 +12,7 @@ export const API = {
     transactions : {
         base : `/transactions`,
         last : `/transactions/last`,
+        create: `/transactions/create`,
         confirm_paid : `/confirm_paid`,
         cancel : `/cancel`,
     }

@@ -2,7 +2,7 @@ import { Box, Heading, HStack, Image, Text } from "@chakra-ui/react"
 
 import favoree_logo from '../../assets/image/logo_favoree_white.png'
 import { contact_number } from "../../credential"
-import { color_base } from "../Navbar";
+import { color_base } from "../../theme";
 
 import { socialFooterList, sectionTwoList,sectionThreeList } from "../../source/footer";
 import { FooterSocialItem } from "./FooterSocialItem";

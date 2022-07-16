@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text } from "@chakra-ui/react"
 import { colorPallet } from "../../theme"
-import { color_base } from "../Navbar"
+import { color_base } from "../../theme"
 
 import dropdown from '../../assets/image/redesign/dropdown.svg'
 import dropWhite from '../../assets/image/redesign/drop_white.svg'

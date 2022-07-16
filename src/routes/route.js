@@ -10,10 +10,12 @@ export const path = {
     blog : "/blog/:slug", // preview for free users
 
     // admin page
-    adminOverview : "/admin/overview",
-    adminListTransaction : `admin/list-transaction`,    
+    adminLogin: "/admin/login",
+    adminOverview : "/admin",
+    adminListTransaction : `/admin/list-transaction`,    
 
     processTransaction : `/transaction`,
+    successTransaction : `/transaction/success`,
 
     any: '*'
 }

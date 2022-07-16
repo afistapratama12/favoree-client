@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react"
 
-import { Navbar } from "../components/Navbar"
+import { Navbar } from "../components/navbar"
 import { Footer } from "../components/footer"
 
 import { Hero } from "../components/home/Hero"
@@ -26,10 +26,20 @@ export const plainData = {
     amount_transfer: ""
 }
 
+export const plainUserData = {
+    email: "",
+    password: "",
+    username: "",
+    full_name: "",
+    phone_number: "",
+}
+
 export const HomePage = () => {
     const accessToken = localStorage.getItem("access_token")
 
     const [dataTransfer, setDataTransfer] = useState(plainData)
+
+    const [dataUser, setDataUser] = useState(plainUserData)
 
     useEffect(() => {
         if (!accessToken) {
@@ -88,11 +98,15 @@ export const HomePage = () => {
             isShowButton={true}
             data={dataTransfer}
             setData={setDataTransfer}
+            user={dataUser}
+            setUser={setDataUser}
         />
         <Box>
             <Hero
                 data={dataTransfer}
                 setData={setDataTransfer}
+                user={dataUser}
+                setUser={setDataUser}
             />
             <Benefit/>
             <AboutUs/>

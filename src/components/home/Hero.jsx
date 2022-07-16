@@ -1,5 +1,5 @@
-import { Box, Button, Heading, HStack, Image, Text, useDisclosure } from "@chakra-ui/react"
-import { color_base, color_hover } from "../Navbar"
+import { Box, Button, Heading, HStack, Image, Spinner, Text, useDisclosure } from "@chakra-ui/react"
+import { color_base, color_hover } from "../../theme"
 
 import hero from "../../assets/image/redesign/hero.svg"
 
@@ -12,7 +12,14 @@ import dana from "../../assets/image/redesign/dana.png"
 import gopay from "../../assets/image/redesign/gopay.png"
 import ovo from "../../assets/image/redesign/ovo.png"
 import spay from "../../assets/image/redesign/spay.png"
-import { ModalTransfer } from "../ModalTransfer";
+import { ModalTransfer } from "../modal/ModalTransfer";
+import { useState } from "react";
+import { ModalLoginRegister } from "../modal/LoginRegister";
+import axios from "axios";
+import { API } from "../../API/api";
+import { base_url } from "../../API/axios";
+import { path } from "../../routes/route";
+import { useHistory } from "react-router-dom";
 
 const listLogoWallet = [{
     src: gopay,
@@ -64,13 +71,68 @@ export const ImageLogo = ({ src, alt, width }) => {
     )
 }
 
-export const Hero = ({data, setData}) => {
+export const Hero = ({data, setData, user, setUser}) => {
+    const history = useHistory()
+    
     const { width } = useWindowDimensions()
 
     const { isOpen, onClose, onOpen} = useDisclosure()
 
+    const [openAccess, setOpenAccess] = useState(false)
+
+    const [loading, setLoading] = useState(false)
+
+    const onOpenAccess = () => {
+        setOpenAccess(true)
+    }
+
+    const onCloseAccess = () => {
+        setOpenAccess(false)
+    }
+
+    const checkLastTransaction = async () => {
+
+        console.log("masuk sini : check last transaction")
+
+        setLoading(true)
+
+        try {
+            const resp = await axios({
+                method: "GET",
+                url: base_url + API.transactions.last,
+                headers: {
+                    Authorization: localStorage.getItem("user_access_token")
+                }
+            })
+
+            if (resp?.status === 200) {
+                if (resp?.data?.internal_code === "ERROR") {
+                    console.log("masuk sini error")
+                    history.push(path.processTransaction)
+                } else if (resp?.data.internal_code === "CREATABLE") {
+                    console.log("masuk sini creatable")
+                    onOpen()
+                    setLoading(false)
+                }
+            }
+        } catch (err) {
+
+            console.log("err last trans : ", err)
+        } finally {
+            setLoading(false)
+        }
+    }
+
     return (
         <>
+
+        <ModalLoginRegister
+            parentIsOpen={openAccess}
+            closeModal={onCloseAccess}
+            data={user}
+            setData={setUser}
+            onOpen={onOpen}
+        />
 
         <ModalTransfer
             isOpen={isOpen}
@@ -186,14 +248,15 @@ export const Hero = ({data, setData}) => {
                                     md: 'auto',
                                     xl: 'auto'
                                 }}
-                                onClick={onOpen}
+                                onClick={e => localStorage.getItem("user_access_token") ? checkLastTransaction() : onOpenAccess()}
                             >
-                                <Text
+                                    <Text
                                     fontWeight={'medium'}
                                     fontSize={'16px'}
-                                >
-                                Yuk Mulai
-                                </Text>
+                                    >
+                                    { loading ? <Spinner/> : "Yuk Mulai" }
+                                    </Text>
+                                
                             </Button>
 
                             <ScrollTo

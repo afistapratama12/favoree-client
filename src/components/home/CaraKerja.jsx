@@ -16,7 +16,7 @@ import ck5 from '../../assets/image/redesign/cara_kerja_5.svg';
 import ck6 from '../../assets/image/redesign/cara_kerja_6.svg';
 import { form_url } from '../../credential';
 import { section_heading, text_description } from '../../responsive';
-import { color_base } from '../Navbar';
+import { color_base } from '../../theme';
 
 const itemList = [
   {
